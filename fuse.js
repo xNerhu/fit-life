@@ -28,7 +28,9 @@ const getConfig = (target, type) => {
           },
         }),
     ],
-    alias: {},
+    alias: {
+      '~': '~/',
+    },
   };
 };
 
