@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { images } from '~/constants';
-import { edoRegular, h5 } from '~/mixins';
+import { images, PRIMARY_COLOR } from '~/constants';
+import { edoRegular, h5, centerImage } from '~/mixins';
 
 export const Start = styled.div`
   width: 100%;
