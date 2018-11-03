@@ -55,6 +55,10 @@ export const Organizators = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 8px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const Contact = styled.div`

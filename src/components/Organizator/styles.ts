@@ -5,6 +5,14 @@ import { icons } from '~/constants';
 
 export const Root = styled.div`
   width: 256px;
+
+  @media (max-width: 1024px) {
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0px;
+    }
+  }
 `;
 
 export const Avatar = styled.div`
