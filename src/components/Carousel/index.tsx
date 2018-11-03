@@ -1,14 +1,14 @@
 import * as React from 'react';
 
+import { CarouselItem } from '~/interfaces';
 import {
   Root,
   Image,
   ArrowIcon,
   CirclesContainer,
-  CircleElement,
+  Circle,
   TextContainer,
 } from './styles';
-import { CarouselItem } from '~/interfaces';
 
 export interface Props {
   items: CarouselItem[];
@@ -29,7 +29,7 @@ export default class Carousel extends React.Component<Props, State> {
     this.setState({ current: items[0] });
   }
 
-  private select = (next = false) => {
+  public select = (next = false) => {
     const { items } = this.props;
     const { current } = this.state;
 
@@ -63,7 +63,7 @@ export default class Carousel extends React.Component<Props, State> {
         <CirclesContainer>
           {items.map((data, key) => {
             return (
-              <CircleElement
+              <Circle
                 selected={current === data}
                 key={key}
                 onClick={() => this.setState({ current: data })}

@@ -24,13 +24,21 @@ export const Image = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #212121;
 
   ${coverImage()};
 
   ${({ url }: { url: string }) => css`
     background-image: url(${url});
   `};
+
+  /* &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.32);
+  } */
 `;
 
 export const ArrowIcon = styled.div`
@@ -58,11 +66,16 @@ export const ArrowIcon = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  padding: 0px 96px;
+  width: calc(100% - 144px);
+  padding: 12px;
   font-size: 16px;
   position: absolute;
-  bottom: 72px;
+  bottom: 64px;
   color: rgba(255, 255, 255, ${transparency.light.primaryText});
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.48);
+
+  ${centerHorizontal()};
 `;
 
 export const CirclesContainer = styled.div`
@@ -74,7 +87,7 @@ export const CirclesContainer = styled.div`
   ${centerHorizontal()};
 `;
 
-export const CircleElement = styled.div`
+export const Circle = styled.div`
   border-radius: 100%;
   margin-left: 8px;
   cursor: pointer;
