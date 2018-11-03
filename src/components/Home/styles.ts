@@ -58,9 +58,12 @@ export const StartSubtitle = styled.div`
 
 export const Contact = styled.div`
   display: flex;
-  flex-direction: row;
-  margin-bottom: 512px;
   user-select: text;
+  flex-direction: row;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContactForm = styled.form`
@@ -76,10 +79,20 @@ export const ContactForm = styled.form`
   & .material-textfield {
     margin-top: 32px;
   }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 `;
 
 export const ContactInfo = styled.div`
   margin-left: 48px;
+
+  @media (max-width: 1024px) {
+    margin: 32px auto;
+  }
 `;
 
 export const ContactLabel = styled.span`
