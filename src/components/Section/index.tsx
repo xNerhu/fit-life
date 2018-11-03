@@ -4,23 +4,23 @@ import { Root, Title, Content } from './styles';
 
 export interface Props {
   title: string;
-  vertical?: boolean;
+  horizontal?: boolean;
   style?: any;
 }
 
 export default class Section extends React.Component<Props, {}> {
   public static defaultProps: Props = {
     title: 'Title',
-    vertical: true,
+    horizontal: false,
   };
 
   render() {
-    const { vertical, title, children, style } = this.props;
+    const { horizontal, title, children, style } = this.props;
 
     return (
-      <Root vertical={vertical} style={style}>
-        <Title vertical={vertical}>{title}</Title>
-        <Content vertical={vertical}>{children}</Content>
+      <Root horizontal={horizontal} style={style}>
+        <Title horizontal={horizontal}>{title}</Title>
+        <Content horizontal={horizontal}>{children}</Content>
       </Root>
     );
   }

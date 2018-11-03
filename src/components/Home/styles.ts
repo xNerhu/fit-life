@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { images } from '~/constants';
-import { edoRegular, h5 } from '~/mixins';
+import { edoRegular, h5, coverImage } from '~/mixins';
 
 export const Start = styled.div`
   width: 100%;
@@ -21,12 +21,12 @@ export const Start = styled.div`
     top: 0;
     left: 0;
     z-index: -1;
-    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     transform: scale(1.1);
     filter: blur(16px);
     background-image: url(${images.header});
+
+    ${coverImage()};
   }
 `;
 

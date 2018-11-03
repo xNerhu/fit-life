@@ -1,4 +1,4 @@
-import header from '~/resources/images/header.jpeg';
+import header from '../resources/images/header.jpeg';
 
 export const images = {
   header,

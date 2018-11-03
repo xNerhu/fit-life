@@ -5,12 +5,13 @@ import { robotoMedium, centerHorizontal } from '~/mixins';
 
 export const Root = styled.section`
   width: 100%;
-  max-width: 1072px;
-  margin: 48px auto 0px auto;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 64px;
   display: flex;
 
-  ${({ vertical }: { vertical: boolean }) => css`
-    flex-direction: ${vertical ? 'column' : 'row'};
+  ${({ horizontal }: { horizontal: boolean }) => css`
+    flex-direction: ${horizontal ? 'row' : 'column'};
   `};
 
   @media (max-width: 1024px) {
@@ -27,9 +28,9 @@ export const Title = styled.div`
 
   ${robotoMedium()};
 
-  ${({ vertical }: { vertical: boolean }) => css`
-    margin-left: ${vertical ? 'auto' : '24px'};
-    margin-right: ${vertical ? ' auto' : 'unset'};
+  ${({ horizontal }: { horizontal: boolean }) => css`
+    margin-left: ${horizontal ? '24px' : 'auto'};
+    margin-right: ${horizontal ? ' unset' : 'auto'};
   `};
 
   &::before {
@@ -52,15 +53,17 @@ export const Title = styled.div`
 `;
 
 export const Content = styled.div`
+  width: 100%;
+  margin-left: auto;
+  padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
-  margin-left: auto;
   font-size: 17px;
   color: rgba(0, 0, 0, ${transparency.light.secondaryText});
 
-  ${({ vertical }: { vertical: boolean }) => css`
-    width: ${vertical ? '100%' : '75%'};
-    padding-top: ${vertical ? '24px' : '0px'};
+  ${({ horizontal }: { horizontal: boolean }) => css`
+    width: ${horizontal ? '75%' : '100%'};
+    padding-top: ${horizontal ? '0px' : '24px'};
   `};
 
   @media (max-width: 1024px) {
