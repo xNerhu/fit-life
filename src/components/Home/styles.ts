@@ -1,13 +1,7 @@
 import styled from 'styled-components';
 
 import { images, transparency } from '~/constants';
-import {
-  edoRegular,
-  h5,
-  coverImage,
-  robotoRegular,
-  robotoMedium,
-} from '~/mixins';
+import { edoRegular, h5, coverImage, robotoMedium } from '~/mixins';
 
 export const Start = styled.div`
   width: 100%;
@@ -56,6 +50,13 @@ export const StartSubtitle = styled.div`
   ${h5()};
 `;
 
+export const Organizators = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+`;
+
 export const Contact = styled.div`
   display: flex;
   user-select: text;
@@ -69,12 +70,13 @@ export const Contact = styled.div`
 export const ContactForm = styled.form`
   width: 75%;
   padding: 32px;
-  border: 1px solid rgba(0, 0, 0, ${transparency.light.dividers});
-  border-radius: 4px;
   box-sizing: content-box;
   display: flex;
   flex-direction: column;
   justify-items: center;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, ${transparency.light.dividers});
 
   & .material-textfield {
     margin-top: 32px;

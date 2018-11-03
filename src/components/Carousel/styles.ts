@@ -16,6 +16,7 @@ export const Root = styled.div`
   border-radius: 4px;
   overflow: hidden;
   position: relative;
+  box-shadow: ${shadows(4)};
 `;
 
 export const Image = styled.div`

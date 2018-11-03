@@ -39,7 +39,7 @@ export const Style = css`
     cursor: default;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #f5f5f5;
     overflow-x: hidden;
     ${body2()};
   }
