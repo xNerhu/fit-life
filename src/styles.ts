@@ -44,4 +44,8 @@ export const Style = css`
 
     ${body2()};
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `;

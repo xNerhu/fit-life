@@ -26,7 +26,7 @@ export const Start = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     transform: scale(1.1);
-    filter: blur(12px);
+    filter: blur(16px);
     background-image: url(${images.header});
   }
 `;

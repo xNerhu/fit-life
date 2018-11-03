@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { PRIMARY_COLOR } from '~/constants';
 import Button from '../Button';
+import Section from '../Section';
 import { Start, Header, SubHeader } from './styles';
 
 export default class Home extends React.Component {
@@ -21,7 +22,12 @@ export default class Home extends React.Component {
             }}
           />
         </Start>
-        under header
+        <Section title="Title">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
+          facere labore doloremque sed dolor ipsum, ex cumque aperiam, nihil
+          voluptate voluptatibus inventore recusandae! Optio et sed expedita
+          eius placeat nesciunt?
+        </Section>
       </React.Fragment>
     );
   }
