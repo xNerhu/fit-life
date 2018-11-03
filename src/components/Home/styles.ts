@@ -21,9 +21,10 @@ export const Start = styled.div`
     top: 0;
     left: 0;
     z-index: -1;
-    background-position: center;
     transform: scale(1.1);
     filter: blur(16px);
+    background-position: center;
+    background-attachment: fixed;
     background-image: url(${images.header});
 
     ${coverImage()};

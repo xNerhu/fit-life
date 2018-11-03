@@ -5,6 +5,7 @@ import Button from '../Button';
 import Section from '../Section';
 import Carousel from '../Carousel';
 import { Start, StartContainer, StartTitle, StartSubtitle } from './styles';
+import Textfield from '../Textfield';
 
 export default class Home extends React.Component {
   render() {
@@ -46,6 +47,15 @@ export default class Home extends React.Component {
           style={{ paddingBottom: 32 }}
         >
           <Carousel items={carouselItems} style={{ marginTop: 16 }} />
+        </Section>
+        <Section title="Kontakt">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+          dolor accusantium, ex nisi doloremque quae, temporibus, inventore illo
+          natus labore molestias totam magni voluptatibus quo asperiores
+          doloribus maiores repudiandae id!
+          <Textfield />
+          <br />
+          xd
         </Section>
       </React.Fragment>
     );

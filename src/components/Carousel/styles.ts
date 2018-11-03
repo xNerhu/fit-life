@@ -30,15 +30,6 @@ export const Image = styled.div`
   ${({ url }: { url: string }) => css`
     background-image: url(${url});
   `};
-
-  /* &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.32);
-  } */
 `;
 
 export const ArrowIcon = styled.div`
