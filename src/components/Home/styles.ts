@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { images } from '~/constants';
-import { edoRegular, h5, coverImage } from '~/mixins';
+import { images, transparency } from '~/constants';
+import { edoRegular, h5, coverImage, robotoRegular } from '~/mixins';
 
 export const Start = styled.div`
   width: 100%;
@@ -57,7 +57,15 @@ export const Contact = styled.div`
 `;
 
 export const ContactForm = styled.form`
-  width: 280px;
+  width: 75%;
+  padding: 32px;
+  border: 1px solid rgba(0, 0, 0, ${transparency.light.dividers});
+  border-radius: 4px;
+  box-sizing: content-box;
+
+  & .material-textfield {
+    margin-top: 32px;
+  }
 `;
 
 export const ContactInfo = styled.form`

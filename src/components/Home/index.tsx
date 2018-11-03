@@ -59,7 +59,21 @@ export default class Home extends React.Component {
         <Section title="Kontakt">
           <Contact>
             <ContactForm>
-              <Textfield />
+              <Textfield label="Nazwa*" style={{ marginTop: 0 }} />
+              <Textfield
+                label="Telefon"
+                inputType="tel"
+                style={{ width: 'calc(50% - 12px)' }}
+                inline
+              />
+              <Textfield
+                label="Email*"
+                inputType="email"
+                style={{ width: 'calc(50% - 12px)', marginLeft: 24 }}
+                inline
+              />
+              <Textfield label="Temat" />
+              <Textfield label="Treść" textArea />
             </ContactForm>
             <ContactInfo>info</ContactInfo>
           </Contact>

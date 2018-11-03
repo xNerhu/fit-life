@@ -8,9 +8,12 @@ import {
   Label,
   Input,
   InputContainer,
+  Textarea,
 } from './styles';
 
-export type KeyboardEvent = (e?: React.KeyboardEvent<HTMLInputElement>) => void;
+export type KeyboardEvent = (
+  e?: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
+) => void;
 
 export interface IProps {
   color?: string;
@@ -18,7 +21,10 @@ export interface IProps {
   onKeyPress?: KeyboardEvent;
   isError?: boolean;
   inputType?: string;
+  textArea?: boolean;
   label?: string;
+  inline?: boolean;
+  spellCheck?: boolean;
 }
 
 export interface IState {
@@ -29,14 +35,17 @@ export default class Textfield extends React.Component<IProps, IState> {
   public static defaultProps = {
     color: '#2196F3',
     inputType: 'text',
+    textArea: false,
     label: 'Label',
+    inline: false,
+    spellCheck: true,
   };
 
   public state: IState = {
     activated: false,
   };
 
-  public inputElement: HTMLInputElement;
+  public inputElement: HTMLInputElement | HTMLTextAreaElement;
 
   public getValue = () => this.inputElement.value;
 
@@ -66,30 +75,60 @@ export default class Textfield extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const { color, style, onKeyPress, isError, inputType, label } = this.props;
+    const {
+      color,
+      style,
+      onKeyPress,
+      isError,
+      inputType,
+      label,
+      inline,
+      textArea,
+      spellCheck,
+    } = this.props;
     const { activated } = this.state;
 
     return (
-      <Root onClick={this.onClick} style={style}>
-        <Container>
-          <InputContainer>
-            <Input
-              innerRef={(r: any) => (this.inputElement = r)}
-              color={color}
-              onFocus={this.onFocus}
-              onBlur={this.onBlur}
-              onKeyPress={onKeyPress}
-              type={inputType}
-              spellCheck={false}
-            />
-            <Label color={color} activated={activated}>
-              {label}
-            </Label>
-          </InputContainer>
-          <HoverBorder className="hover-border" />
-          <Indicator color={color} activated={activated || isError} />
-        </Container>
-      </Root>
+      <React.Fragment>
+        {!inline && <div style={{ clear: 'both' }} />}
+        <Root
+          className="material-textfield"
+          onClick={this.onClick}
+          inline={inline}
+          style={style}
+        >
+          <Container textArea={textArea}>
+            <InputContainer>
+              {(!textArea && (
+                <Input
+                  innerRef={(r: any) => (this.inputElement = r)}
+                  color={color}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  onKeyPress={onKeyPress}
+                  type={inputType}
+                  spellCheck={spellCheck}
+                />
+              )) || (
+                <Textarea
+                  innerRef={(r: any) => (this.inputElement = r)}
+                  color={color}
+                  onFocus={this.onFocus}
+                  onBlur={this.onBlur}
+                  onKeyPress={onKeyPress}
+                  spellCheck={false}
+                />
+              )}
+
+              <Label color={color} activated={activated}>
+                {label}
+              </Label>
+            </InputContainer>
+            <HoverBorder className="hover-border" />
+            <Indicator color={color} activated={activated || isError} />
+          </Container>
+        </Root>
+      </React.Fragment>
     );
   }
 }

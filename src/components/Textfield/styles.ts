@@ -6,11 +6,14 @@ import { transparency } from '~/constants';
 export const Root = styled.div`
   width: 100%;
   position: relative;
+
+  ${({ inline }: { inline: boolean }) => css`
+    display: ${inline ? 'inline-flex' : 'block'};
+  `};
 `;
 
 export const Container = styled.div`
   width: 100%;
-  height: 56px;
   position: relative;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.06);
@@ -23,6 +26,10 @@ export const Container = styled.div`
       opacity: 1;
     }
   }
+
+  ${({ textArea }: { textArea: boolean }) => css`
+    height: ${textArea ? 'unset' : '56px'};
+  `};
 `;
 
 export const HoverBorder = styled.div`
@@ -44,12 +51,11 @@ export const Label = styled.div`
   transition-duration: 0.15s;
   transition-timing-function: ease-out;
 
-  ${centerVertical()};
   ${robotoMedium()};
 
   ${({ activated, color }: { activated: boolean; color: string }) => css`
     font-size: ${activated ? 12 : 16}px;
-    top: ${activated ? '16px' : '50%'};
+    top: ${activated ? '10px' : '18px'};
     color: ${activated
       ? color
       : `rgba(0, 0, 0, ${transparency.light.secondaryText})`};
@@ -65,7 +71,7 @@ export const InputContainer = styled.div`
   align-items: center;
 `;
 
-export const Input = styled.input`
+const inputStyle = css`
   width: 100%;
   height: calc(100% - 16px);
   border: none;
@@ -89,6 +95,19 @@ export const Input = styled.input`
   &:focus {
     cursor: text;
   }
+`;
+
+export const Input = styled.input`
+  ${inputStyle};
+`;
+
+export const Textarea = styled.textarea`
+  ${inputStyle};
+
+  min-width: 100%;
+  min-height: 128px;
+  margin-top: 32px;
+  padding-top: 0px;
 `;
 
 export interface IndicatorProps {
