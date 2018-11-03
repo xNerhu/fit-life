@@ -74,7 +74,7 @@ export const CirclesContainer = styled.div`
   ${centerHorizontal()};
 `;
 
-export const Circle = styled.div`
+export const CircleElement = styled.div`
   border-radius: 100%;
   margin-left: 8px;
   cursor: pointer;

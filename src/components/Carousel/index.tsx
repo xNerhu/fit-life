@@ -5,51 +5,70 @@ import {
   Image,
   ArrowIcon,
   CirclesContainer,
-  Circle,
+  CircleElement,
   TextContainer,
 } from './styles';
 import { CarouselItem } from '~/interfaces';
 
 export interface Props {
   items: CarouselItem[];
-  style: any;
+  style?: any;
 }
 
 interface State {
-  current: number;
+  current: CarouselItem;
 }
 
 export default class Carousel extends React.Component<Props, State> {
   public state: State = {
-    current: 0,
+    current: null,
+  };
+
+  componentDidMount() {
+    const { items } = this.props;
+    this.setState({ current: items[0] });
+  }
+
+  private select = (next = false) => {
+    const { items } = this.props;
+    const { current } = this.state;
+
+    let index = items.indexOf(current);
+
+    if (!next) {
+      index--;
+      if (index < 0) index = items.length - 1;
+    } else {
+      index++;
+      if (index > items.length - 1) index = 0;
+    }
+
+    this.setState({ current: items[index] });
   };
 
   render() {
     const { items, style } = this.props;
     const { current } = this.state;
 
-    const item = items[current];
-
-    let index = -1;
-
     return (
       <Root style={style}>
-        <Image url={item.image} />
-        <TextContainer>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque animi
-          repellendus amet sequi voluptates perspiciatis architecto veniam
-          similique, aliquam minus ipsam distinctio, quo incidunt fuga velit
-          omnis. Ducimus, sunt voluptatem. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Quos sunt modi expedita laboriosam
-          voluptatum labore minima porro fugiat aliquid, obcaecati impedit nisi
-          eaque ullam facere ipsa temporibus eligendi! Vel, id.
-        </TextContainer>
-        <ArrowIcon side="left" />
-        <ArrowIcon side="right" />
+        {current && (
+          <React.Fragment>
+            <Image url={current.image} />
+            <TextContainer>{current.text}</TextContainer>
+          </React.Fragment>
+        )}
+        <ArrowIcon side="left" onClick={() => this.select()} />
+        <ArrowIcon side="right" onClick={() => this.select(true)} />
         <CirclesContainer>
           {items.map((data, key) => {
-            index++;
-            return <Circle selected={current === index} key={key} />;
+            return (
+              <CircleElement
+                selected={current === data}
+                key={key}
+                onClick={() => this.setState({ current: data })}
+              />
+            );
           })}
         </CirclesContainer>
       </Root>
