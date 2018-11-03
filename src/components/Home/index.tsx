@@ -22,7 +22,13 @@ export default class Home extends React.Component {
             }}
           />
         </Start>
-        <Section title="Title">
+        <Section title="Vertical">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
+          facere labore doloremque sed dolor ipsum, ex cumque aperiam, nihil
+          voluptate voluptatibus inventore recusandae! Optio et sed expedita
+          eius placeat nesciunt?
+        </Section>
+        <Section title="Horizontal" vertical={false}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
           facere labore doloremque sed dolor ipsum, ex cumque aperiam, nihil
           voluptate voluptatibus inventore recusandae! Optio et sed expedita
