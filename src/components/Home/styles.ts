@@ -60,6 +60,7 @@ export const Contact = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 512px;
+  user-select: text;
 `;
 
 export const ContactForm = styled.form`
@@ -68,18 +69,21 @@ export const ContactForm = styled.form`
   border: 1px solid rgba(0, 0, 0, ${transparency.light.dividers});
   border-radius: 4px;
   box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
 
   & .material-textfield {
     margin-top: 32px;
   }
 `;
 
-export const ContactInfo = styled.form`
-  margin-left: 32px;
+export const ContactInfo = styled.div`
+  margin-left: 48px;
 `;
 
 export const ContactLabel = styled.span`
-  font-size: 16px;
+  font-size: 17px;
   margin-right: 16px;
   color: rgba(0, 0, 0, ${transparency.light.primaryText});
 
@@ -87,5 +91,5 @@ export const ContactLabel = styled.span`
 `;
 
 export const ContactText = styled.span`
-  font-size: 16px;
+  font-size: 17px;
 `;

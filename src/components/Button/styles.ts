@@ -22,7 +22,10 @@ export const Root = styled.div`
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  user-select: none;
   transition: 0.2s box-shadow;
+
+  ${button()};
 
   ${({
     background,
@@ -52,6 +55,4 @@ export const Root = styled.div`
       opacity: 0.12;
     }
   `};
-
-  ${button()};
 `;

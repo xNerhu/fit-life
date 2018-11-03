@@ -62,20 +62,28 @@ export default class Home extends React.Component {
           <Contact>
             <ContactForm>
               <Textfield label="Nazwa firmy*" style={{ marginTop: 0 }} />
-              <Textfield
-                label="Telefon*"
-                inputType="tel"
-                style={{ width: 'calc(50% - 12px)' }}
-                inline
-              />
-              <Textfield
-                label="Email*"
-                inputType="email"
-                style={{ width: 'calc(50% - 12px)', marginLeft: 24 }}
-                inline
-              />
+              <div>
+                <Textfield
+                  label="Telefon*"
+                  inputType="tel"
+                  style={{ width: 'calc(50% - 12px)' }}
+                  inline
+                />
+                <Textfield
+                  label="Email*"
+                  inputType="email"
+                  style={{ width: 'calc(50% - 12px)', marginLeft: 24 }}
+                  inline
+                />
+              </div>
               <Textfield label="Temat" />
               <Textfield label="Treść" textArea />
+              <Button
+                style={{ marginLeft: 'auto', marginTop: 32 }}
+                background="#2196F3"
+                foreground="#fff"
+                text="WYŚLIJ"
+              />
             </ContactForm>
             <ContactInfo>
               <ContactText>
