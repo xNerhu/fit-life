@@ -1,17 +1,17 @@
 import * as React from 'react';
 
-import { PRIMARY_COLOR, transparency } from '~/constants';
+import { PRIMARY_COLOR } from '~/constants';
 import Button from '../Button';
 import Section from '../Section';
-import { Start, Header, SubHeader } from './styles';
+import { Start } from './styles';
 
 export default class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Start>
-          <Header>Projekt Fit Life</Header>
-          <SubHeader>Zmień swoje życie na lepsze</SubHeader>
+        <Start.Root>
+          <Start.Title>Projekt Fit Life</Start.Title>
+          <Start.Subtitle>Zmień swoje życie na lepsze</Start.Subtitle>
           <Button
             variant="outlined"
             borderColor={PRIMARY_COLOR}
@@ -21,7 +21,7 @@ export default class Home extends React.Component {
               marginTop: 32,
             }}
           />
-        </Start>
+        </Start.Root>
         <Section
           title="O projekcie"
           vertical={false}

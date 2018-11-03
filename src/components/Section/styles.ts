@@ -5,13 +5,17 @@ import { robotoMedium, centerHorizontal } from '~/mixins';
 
 export const Root = styled.section`
   width: 100%;
-  max-width: 1200px;
+  max-width: 1072px;
   margin: 48px auto 0px auto;
   display: flex;
 
   ${({ vertical }: { vertical: boolean }) => css`
     flex-direction: ${vertical ? 'column' : 'row'};
   `};
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `;
 
 export const Title = styled.div`
@@ -39,10 +43,15 @@ export const Title = styled.div`
 
     ${centerHorizontal()};
   }
+
+  @media (max-width: 1024px) {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
 `;
 
 export const Content = styled.div`
-  max-width: 1200px;
   padding-left: 24px;
   padding-right: 24px;
   margin-left: auto;
@@ -53,4 +62,9 @@ export const Content = styled.div`
     width: ${vertical ? '100%' : '75%'};
     padding-top: ${vertical ? '24px' : '0px'};
   `};
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding-top: 24px;
+  }
 `;
