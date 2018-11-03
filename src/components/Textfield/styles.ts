@@ -104,8 +104,8 @@ export const Input = styled.input`
 export const Textarea = styled.textarea`
   ${inputStyle};
 
-  min-width: 100%;
   min-height: 128px;
+  resize: vertical;
   margin-top: 32px;
   padding-top: 0px;
 `;

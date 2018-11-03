@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 
 import { images, transparency } from '~/constants';
-import { edoRegular, h5, coverImage, robotoRegular } from '~/mixins';
+import {
+  edoRegular,
+  h5,
+  coverImage,
+  robotoRegular,
+  robotoMedium,
+} from '~/mixins';
 
 export const Start = styled.div`
   width: 100%;
@@ -69,6 +75,17 @@ export const ContactForm = styled.form`
 `;
 
 export const ContactInfo = styled.form`
-  width: 25%;
-  display: none;
+  margin-left: 32px;
+`;
+
+export const ContactLabel = styled.span`
+  font-size: 16px;
+  margin-right: 16px;
+  color: rgba(0, 0, 0, ${transparency.light.primaryText});
+
+  ${robotoMedium()};
+`;
+
+export const ContactText = styled.span`
+  font-size: 16px;
 `;

@@ -13,6 +13,8 @@ import {
   Contact,
   ContactForm,
   ContactInfo,
+  ContactLabel,
+  ContactText,
 } from './styles';
 
 export default class Home extends React.Component {
@@ -37,6 +39,7 @@ export default class Home extends React.Component {
             />
           </StartContainer>
         </Start>
+
         <Section
           title="O projekcie"
           style={{
@@ -50,18 +53,17 @@ export default class Home extends React.Component {
           repudiandae, et eligendi voluptatum saepe nisi maxime magnam. Numquam
           cumque veniam placeat.
         </Section>
-        <Section
-          title="O problemie i sposobach jego ograniczenia"
-          style={{ paddingBottom: 32 }}
-        >
-          <Carousel items={carouselItems} style={{ marginTop: 16 }} />
+
+        <Section title="O problemie i sposobach jego ograniczenia">
+          <Carousel items={carouselItems} />
         </Section>
+
         <Section title="Kontakt">
           <Contact>
             <ContactForm>
-              <Textfield label="Nazwa*" style={{ marginTop: 0 }} />
+              <Textfield label="Nazwa firmy*" style={{ marginTop: 0 }} />
               <Textfield
-                label="Telefon"
+                label="Telefon*"
                 inputType="tel"
                 style={{ width: 'calc(50% - 12px)' }}
                 inline
@@ -75,7 +77,20 @@ export default class Home extends React.Component {
               <Textfield label="Temat" />
               <Textfield label="Treść" textArea />
             </ContactForm>
-            <ContactInfo>info</ContactInfo>
+            <ContactInfo>
+              <ContactText>
+                Zespół Szkół Ogólnokształcących Nr 2 w Opolu,
+                <br />
+                Generała Kazimierza Pułaskiego 3, 45-048 Opole
+              </ContactText>
+              <br />
+              <br />
+              <ContactLabel>Telefon:</ContactLabel>
+              <ContactText>+48 783623157</ContactText>
+              <br />
+              <ContactLabel>E-mail:</ContactLabel>
+              <ContactText>projekt.fit.life@onet.pl</ContactText>
+            </ContactInfo>
           </Contact>
         </Section>
       </React.Fragment>

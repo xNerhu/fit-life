@@ -55,7 +55,6 @@ export const Title = styled.div`
 export const Content = styled.div`
   width: 100%;
   margin-left: auto;
-  padding-top: 24px;
   padding-left: 24px;
   padding-right: 24px;
   font-size: 17px;
@@ -63,11 +62,11 @@ export const Content = styled.div`
 
   ${({ horizontal }: { horizontal: boolean }) => css`
     width: ${horizontal ? '75%' : '100%'};
-    padding-top: ${horizontal ? '0px' : '24px'};
+    padding-top: ${horizontal ? '0px' : '32px'};
   `};
 
   @media (max-width: 1024px) {
     width: 100%;
-    padding-top: 24px;
+    padding-top: 32px;
   }
 `;
