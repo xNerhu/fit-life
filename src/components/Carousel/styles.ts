@@ -1,7 +1,13 @@
 import styled, { css } from 'styled-components';
 
-import { centerHorizontal, centerImage, coverImage, shadows } from '~/mixins';
-import { transparency } from '~/constants';
+import {
+  centerHorizontal,
+  centerImage,
+  coverImage,
+  shadows,
+  centerVertical,
+} from '~/mixins';
+import { transparency, icons } from '~/constants';
 
 export const Root = styled.div`
   width: 100%;
@@ -23,6 +29,30 @@ export const Image = styled.div`
   ${({ url }: { url: string }) => css`
     background-image: url(${url});
   `};
+`;
+
+export const ArrowIcon = styled.div`
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  filter: invert(100%);
+  cursor: pointer;
+  border-radius: 100%;
+  background-image: url(${icons.arrow});
+  opacity: ${transparency.light.activeIcon};
+
+  ${centerImage('32px', 'auto')};
+  ${centerVertical()};
+
+  ${({ side }: { side: 'left' | 'right' }) => css`
+    transform: ${side === 'right' ? 'rotate(180deg)' : 'unset'};
+    left: ${side === 'left' ? '8px' : 'unset'};
+    right: ${side === 'right' ? '8px' : 'unset'};
+  `};
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.16);
+  }
 `;
 
 export const CirclesContainer = styled.div`

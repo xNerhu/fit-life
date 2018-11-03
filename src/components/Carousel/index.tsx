@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Root, Image, CirclesContainer, Circle } from './styles';
+import { Root, Image, ArrowIcon, CirclesContainer, Circle } from './styles';
 import { CarouselItem } from '~/interfaces';
 
 export interface Props {
@@ -28,6 +28,8 @@ export default class Carousel extends React.Component<Props, State> {
     return (
       <Root style={style}>
         <Image url={item.image} />
+        <ArrowIcon side="left" />
+        <ArrowIcon side="right" />
         <CirclesContainer>
           {items.map((data, key) => {
             index++;
