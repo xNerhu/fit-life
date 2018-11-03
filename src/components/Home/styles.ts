@@ -49,3 +49,18 @@ export const StartSubtitle = styled.div`
 
   ${h5()};
 `;
+
+export const Contact = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 512px;
+`;
+
+export const ContactForm = styled.form`
+  width: 280px;
+`;
+
+export const ContactInfo = styled.form`
+  width: 25%;
+  display: none;
+`;

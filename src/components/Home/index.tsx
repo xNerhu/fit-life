@@ -4,8 +4,16 @@ import { PRIMARY_COLOR, carouselItems } from '~/constants';
 import Button from '../Button';
 import Section from '../Section';
 import Carousel from '../Carousel';
-import { Start, StartContainer, StartTitle, StartSubtitle } from './styles';
 import Textfield from '../Textfield';
+import {
+  Start,
+  StartContainer,
+  StartTitle,
+  StartSubtitle,
+  Contact,
+  ContactForm,
+  ContactInfo,
+} from './styles';
 
 export default class Home extends React.Component {
   render() {
@@ -49,13 +57,12 @@ export default class Home extends React.Component {
           <Carousel items={carouselItems} style={{ marginTop: 16 }} />
         </Section>
         <Section title="Kontakt">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          dolor accusantium, ex nisi doloremque quae, temporibus, inventore illo
-          natus labore molestias totam magni voluptatibus quo asperiores
-          doloribus maiores repudiandae id!
-          <Textfield />
-          <br />
-          xd
+          <Contact>
+            <ContactForm>
+              <Textfield />
+            </ContactForm>
+            <ContactInfo>info</ContactInfo>
+          </Contact>
         </Section>
       </React.Fragment>
     );

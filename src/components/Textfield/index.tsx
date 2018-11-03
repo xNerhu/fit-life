@@ -1,12 +1,13 @@
 import * as React from 'react';
 
 import {
+  Root,
   Container,
   HoverBorder,
   Indicator,
+  Label,
   Input,
   InputContainer,
-  Root,
 } from './styles';
 
 export type KeyboardEvent = (e?: React.KeyboardEvent<HTMLInputElement>) => void;
@@ -17,6 +18,7 @@ export interface IProps {
   onKeyPress?: KeyboardEvent;
   isError?: boolean;
   inputType?: string;
+  label?: string;
 }
 
 export interface IState {
@@ -27,6 +29,7 @@ export default class Textfield extends React.Component<IProps, IState> {
   public static defaultProps = {
     color: '#2196F3',
     inputType: 'text',
+    label: 'Label',
   };
 
   public state: IState = {
@@ -63,7 +66,7 @@ export default class Textfield extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const { color, style, onKeyPress, isError, inputType } = this.props;
+    const { color, style, onKeyPress, isError, inputType, label } = this.props;
     const { activated } = this.state;
 
     return (
@@ -77,7 +80,11 @@ export default class Textfield extends React.Component<IProps, IState> {
               onBlur={this.onBlur}
               onKeyPress={onKeyPress}
               type={inputType}
+              spellCheck={false}
             />
+            <Label color={color} activated={activated}>
+              {label}
+            </Label>
           </InputContainer>
           <HoverBorder className="hover-border" />
           <Indicator color={color} activated={activated || isError} />
