@@ -5,24 +5,31 @@ import { body2 } from '~/mixins';
 
 export const Style = css`
   @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 400;
     src: url(${fonts.robotoRegular}) format('woff2');
   }
 
   @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 500;
     src: url(${fonts.robotoMedium}) format('woff2');
   }
 
   @font-face {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: 300;
     src: url(${fonts.robotoLight}) format('woff2');
+  }
+
+  @font-face {
+    font-family: 'Edo';
+    font-style: normal;
+    font-weight: 400;
+    src: url(${fonts.edoRegular}) format('woff2');
   }
 
   body {
@@ -33,7 +40,7 @@ export const Style = css`
     margin: 0;
     padding: 0;
     background-color: white;
-    overflow-x: hidden;
+    overflow: hidden;
 
     ${body2()};
   }

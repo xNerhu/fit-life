@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Start from '../Start';
-import { fonts } from '~/constants';
+import Home from '../Home';
+import { StyledApp } from './styles';
 
 class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <React.Fragment>
-          <Route path="/" component={Start} />
-        </React.Fragment>
+        <StyledApp>
+          <Route path="/" component={Home} />
+        </StyledApp>
       </BrowserRouter>
     );
   }

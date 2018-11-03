@@ -28,9 +28,7 @@ const getConfig = (target, type) => {
           },
         }),
     ],
-    alias: {
-      '~': '~/',
-    },
+    alias: {},
   };
 };
 
@@ -43,14 +41,14 @@ const getClientConfig = () => {
 
 const getWebIndexPlugin = name => {
   return WebIndexPlugin({
-    template: `static/${name}.html`,
+    template: `src/resources/page/${name}.html`,
     path: './',
   });
 };
 
 const getCopyPlugin = () => {
   return CopyPlugin({
-    files: ['*.woff2', '*.png', '*.svg'],
+    files: ['*.woff2', '*.png', '*.svg', '*.jpg', '*.jpeg'],
     dest: 'assets',
     resolve: production ? './assets' : '/assets',
   });
