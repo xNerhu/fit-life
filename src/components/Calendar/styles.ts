@@ -7,11 +7,10 @@ import {
   robotoLight,
   centerBoth,
 } from '~/mixins';
-import { transparency, icons } from '~/constants';
+import { transparency, icons, PRIMARY_COLOR } from '~/constants';
 
 export const Root = styled.div`
   width: 352px;
-  height: 200px;
   background-color: #fff;
   border-radius: 4px;
   margin-left: auto;
@@ -108,8 +107,27 @@ export const Td = styled.td`
 `;
 
 export const TdContent = styled.div`
-  color: rgba(0, 0, 0, ${transparency.light.primaryText});
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: background-color;
+  transition: 0.15s background-color;
+  color: rgba(0, 0, 0, ${transparency.light.primaryText});
 
   ${centerBoth()};
+
+  ${({ selected }: { selected: boolean }) => css`
+    background-color: ${selected ? PRIMARY_COLOR : 'unset'};
+
+    ${!selected &&
+      css`
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.08);
+        }
+      `};
+  `};
 `;

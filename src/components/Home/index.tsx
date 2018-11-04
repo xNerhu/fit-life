@@ -62,7 +62,7 @@ export default class Home extends React.Component {
           <Carousel items={carouselItems} />
         </Section>
 
-        <Section title="Organizatorzy" style={{ marginTop: 96 }}>
+        <Section title="Prowadzący" style={{ marginTop: 96 }}>
           <Organizators>
             <Organizator
               name="Michał Ćwikła"

@@ -12,7 +12,7 @@ import {
   Td,
   TdContent,
 } from './styles';
-import { getDaysInMonth } from '~/utils';
+import { getDaysInMonth, getFirstDayOfMonth, getLastDayOfMonth } from '~/utils';
 
 export interface Props {
   minYear: 2018;
@@ -20,13 +20,50 @@ export interface Props {
 }
 
 export default class Calendar extends React.Component<Props, {}> {
-  componentDidMount() {
-    const days = getDaysInMonth(11, 2018);
+  private createTable() {
+    const month = 11;
+    const year = 2018;
 
-    console.log(days);
+    const firstDayOfCurrent = getFirstDayOfMonth(month, year);
+    const lastDayOfCurrent = getLastDayOfMonth(month, year);
+    const daysInCurrent = getDaysInMonth(month, year);
+
+    const rowsCount = Math.ceil(
+      (firstDayOfCurrent + 6 - lastDayOfCurrent + daysInCurrent) / 7,
+    );
+
+    const rows = [];
+
+    for (let i = 0; i < rowsCount; i++) {
+      const row = [];
+
+      for (let j = 0; j < 7; j++) {
+        if (i === 0) {
+          if (j >= firstDayOfCurrent) {
+            row.push(j - firstDayOfCurrent + 1);
+          } else {
+            row.push(null);
+          }
+        } else {
+          const day: number = rows[0][6] + j + 1 + 7 * (i - 1);
+
+          if (day <= daysInCurrent) {
+            row.push(day);
+          } else {
+            row.push(null);
+          }
+        }
+      }
+
+      rows.push(row);
+    }
+
+    return rows;
   }
 
   render() {
+    const currentDay = new Date().getDate();
+
     return (
       <Root>
         <Bar>
@@ -52,29 +89,28 @@ export default class Calendar extends React.Component<Props, {}> {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <Td>
-                <TdContent>1</TdContent>
-              </Td>
-              <Td>
-                <TdContent>2</TdContent>
-              </Td>
-              <Td>
-                <TdContent>3</TdContent>
-              </Td>
-              <Td>
-                <TdContent>4</TdContent>
-              </Td>
-              <Td>
-                <TdContent>5</TdContent>
-              </Td>
-              <Td>
-                <TdContent>6</TdContent>
-              </Td>
-              <Td>
-                <TdContent>7</TdContent>
-              </Td>
-            </tr>
+            {this.createTable().map((data, key) => {
+              return (
+                <tr key={key}>
+                  {data.map((day, key2) => {
+                    return (
+                      <Td
+                        key={key2}
+                        style={{
+                          pointerEvents: day == null ? 'none' : 'auto',
+                        }}
+                      >
+                        {day && (
+                          <TdContent selected={day === currentDay}>
+                            {day}
+                          </TdContent>
+                        )}
+                      </Td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
           </tbody>
         </Table>
       </Root>
