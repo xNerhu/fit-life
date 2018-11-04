@@ -5,6 +5,8 @@ import Button from '../Button';
 import Section from '../Section';
 import Carousel from '../Carousel';
 import Textfield from '../Textfield';
+import Organizator from '../Organizator';
+import Calendar from '../Calendar';
 import {
   Start,
   StartContainer,
@@ -16,8 +18,8 @@ import {
   ContactLabel,
   ContactText,
   Organizators,
+  SecondBackground,
 } from './styles';
-import Organizator from '../Organizator';
 
 export default class Home extends React.Component {
   render() {
@@ -60,7 +62,7 @@ export default class Home extends React.Component {
           <Carousel items={carouselItems} />
         </Section>
 
-        <Section title="Organizatorzy">
+        <Section title="Organizatorzy" style={{ marginTop: 96 }}>
           <Organizators>
             <Organizator
               name="Michał Ćwikła"
@@ -100,6 +102,16 @@ export default class Home extends React.Component {
             />
           </Organizators>
         </Section>
+
+        <SecondBackground>
+          <Section
+            title="Nadchodzące wydarzenia"
+            style={{ paddingTop: 24 }}
+            horizontal
+          >
+            <Calendar />
+          </Section>
+        </SecondBackground>
 
         <Section title="Kontakt">
           <Contact>

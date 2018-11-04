@@ -31,6 +31,11 @@ export const Title = styled.div`
   ${({ horizontal }: { horizontal: boolean }) => css`
     margin-left: ${horizontal ? '24px' : 'auto'};
     margin-right: ${horizontal ? ' unset' : 'auto'};
+
+    &::before {
+      left: ${horizontal ? '0px' : '50%'};
+      transform: ${horizontal ? 'unset' : 'translateX(-50%)'};
+    }
   `};
 
   &::before {
@@ -41,8 +46,6 @@ export const Title = styled.div`
     bottom: 0px;
     position: absolute;
     background-color: ${PRIMARY_COLOR};
-
-    ${centerHorizontal()};
   }
 
   @media (max-width: 1024px) {

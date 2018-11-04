@@ -112,3 +112,10 @@ export const ContactLabel = styled.span`
 export const ContactText = styled.span`
   font-size: 17px;
 `;
+
+export const SecondBackground = styled.div`
+  width: 100%;
+  background-color: #fafafa;
+  margin-top: 64px;
+  padding-bottom: 24px;
+`;
