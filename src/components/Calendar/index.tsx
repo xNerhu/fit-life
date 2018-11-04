@@ -12,6 +12,7 @@ import {
   Td,
   TdContent,
 } from './styles';
+import { getDaysInMonth } from '~/utils';
 
 export interface Props {
   minYear: 2018;
@@ -19,6 +20,12 @@ export interface Props {
 }
 
 export default class Calendar extends React.Component<Props, {}> {
+  componentDidMount() {
+    const days = getDaysInMonth(11, 2018);
+
+    console.log(days);
+  }
+
   render() {
     return (
       <Root>
@@ -34,13 +41,15 @@ export default class Calendar extends React.Component<Props, {}> {
         </Bar>
         <Table>
           <thead>
-            <Th>PON</Th>
-            <Th>WT</Th>
-            <Th>ŚR</Th>
-            <Th>CZW</Th>
-            <Th>PT</Th>
-            <Th>SOB</Th>
-            <Th>NIED</Th>
+            <tr>
+              <Th>PON</Th>
+              <Th>WT</Th>
+              <Th>ŚR</Th>
+              <Th>CZW</Th>
+              <Th>PT</Th>
+              <Th>SOB</Th>
+              <Th>NIED</Th>
+            </tr>
           </thead>
           <tbody>
             <tr>
