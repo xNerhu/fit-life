@@ -9,6 +9,9 @@ export const Root = styled.div`
   margin-left: 48px;
   border-radius: 4px;
   box-sizing: content-box;
+  cursor: pointer;
+  will-change: background-color;
+  transition: 0.15s background-color;
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.08);
