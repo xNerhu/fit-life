@@ -1,12 +1,12 @@
 import * as React from 'react';
 
 import { Root, Avatar, Name, Socials, SocialIcon } from './styles';
-import { SocialLink } from '~/interfaces';
+import { ISocialLink } from '~/interfaces';
 
 export interface Props {
   avatar: string;
   name: string;
-  socials?: SocialLink[];
+  socials?: ISocialLink[];
 }
 
 export default class Leader extends React.Component<Props, {}> {

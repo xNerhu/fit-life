@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { PRIMARY_COLOR, carouselItems } from '~/constants';
+import { PRIMARY_COLOR, carouselItems, eventsList } from '~/constants';
 import Button from '../Button';
 import Section from '../Section';
 import Carousel from '../Carousel';
@@ -109,7 +109,7 @@ export default class Home extends React.Component {
             style={{ paddingTop: 24 }}
             horizontal
           >
-            <Calendar />
+            <Calendar events={eventsList} />
           </Section>
         </SecondBackground>
 
@@ -149,10 +149,15 @@ export default class Home extends React.Component {
               <br />
               <br />
               <ContactLabel>Telefon:</ContactLabel>
-              <ContactText>+48 783623157</ContactText>
+              <ContactText style={{ float: 'right' }}>
+                +48 783623157
+              </ContactText>
               <br />
               <ContactLabel>E-mail:</ContactLabel>
-              <ContactText>projekt.fit.life@onet.pl</ContactText>
+              <ContactText style={{ float: 'right' }}>
+                projekt.fit.life@onet.pl
+              </ContactText>
+              <div style={{ clear: 'both' }} />
             </ContactInfo>
           </Contact>
         </Section>

@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import { getCalendarDays } from '~/utils';
+import { IEvent } from '~/interfaces';
 import {
   Root,
   Bar,
@@ -12,63 +14,46 @@ import {
   Td,
   TdContent,
 } from './styles';
-import { getDaysInMonth, getFirstDayOfMonth, getLastDayOfMonth } from '~/utils';
 
 export interface Props {
-  minYear: 2018;
-  maxYear: 2019;
+  events: IEvent[];
 }
 
-export default class Calendar extends React.Component<Props, {}> {
-  private createTable() {
-    const month = 11;
-    const year = 2018;
+interface State {
+  date?: {
+    month: number;
+    year: number;
+  };
+}
 
-    const firstDayOfCurrent = getFirstDayOfMonth(month, year);
-    const lastDayOfCurrent = getLastDayOfMonth(month, year);
-    const daysInCurrent = getDaysInMonth(month, year);
+export default class Calendar extends React.Component<Props, State> {
+  public componentWillMount() {
+    const current = new Date();
 
-    const rowsCount = Math.ceil(
-      (firstDayOfCurrent + 6 - lastDayOfCurrent + daysInCurrent) / 7,
-    );
-
-    const rows = [];
-
-    for (let i = 0; i < rowsCount; i++) {
-      const row = [];
-
-      for (let j = 0; j < 7; j++) {
-        if (i === 0) {
-          if (j >= firstDayOfCurrent) {
-            row.push(j - firstDayOfCurrent + 1);
-          } else {
-            row.push(null);
-          }
-        } else {
-          const day: number = rows[0][6] + j + 1 + 7 * (i - 1);
-
-          if (day <= daysInCurrent) {
-            row.push(day);
-          } else {
-            row.push(null);
-          }
-        }
-      }
-
-      rows.push(row);
-    }
-
-    return rows;
+    this.setState({
+      date: {
+        month: current.getMonth(),
+        year: current.getFullYear(),
+      },
+    });
   }
 
   render() {
+    const { events } = this.props;
+    const { date } = this.state;
+
     const currentDay = new Date().getDate();
+    const eventsList = events.filter(
+      e =>
+        e.start.getMonth() === date.month &&
+        e.start.getFullYear() === date.year,
+    );
 
     return (
       <Root>
         <Bar>
           <PeriodButton>
-            LIS 2018
+            LISTOPAD 2018
             <PeriodButtonIcon />
           </PeriodButton>
           <ArrowsContainer>
@@ -89,7 +74,7 @@ export default class Calendar extends React.Component<Props, {}> {
             </tr>
           </thead>
           <tbody>
-            {this.createTable().map((data, key) => {
+            {getCalendarDays(11, 2018).map((data, key) => {
               return (
                 <tr key={key}>
                   {data.map((day, key2) => {
