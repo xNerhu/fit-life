@@ -9,7 +9,7 @@ export interface Props {
   socials?: ISocialLink[];
 }
 
-export default class Leader extends React.Component<Props, {}> {
+export default class TeamMember extends React.Component<Props, {}> {
   render() {
     const { avatar, name, socials } = this.props;
 
