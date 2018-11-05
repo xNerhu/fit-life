@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { Root, Avatar, Name, Socials, Social } from './styles';
+import { Root, Avatar, Name, Socials, SocialIcon } from './styles';
 import { SocialLink } from '~/interfaces';
 
 export interface Props {
@@ -9,7 +9,7 @@ export interface Props {
   socials?: SocialLink[];
 }
 
-export default class Organizator extends React.Component<Props, {}> {
+export default class Leader extends React.Component<Props, {}> {
   render() {
     const { avatar, name, socials } = this.props;
 
@@ -20,7 +20,7 @@ export default class Organizator extends React.Component<Props, {}> {
         <Socials>
           {socials.map((data, key) => {
             return (
-              <Social
+              <SocialIcon
                 href={data.url}
                 type={data.type}
                 key={key}

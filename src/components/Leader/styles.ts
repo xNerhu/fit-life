@@ -1,13 +1,26 @@
 import styled, { css } from 'styled-components';
 
 import { coverImage, robotoRegular, centerImage } from '~/mixins';
-import { icons } from '~/constants';
+import { icons, transparency } from '~/constants';
 
 export const Root = styled.div`
-  width: 256px;
+  width: 196px;
+  padding: 16px 8px;
+  margin-left: 48px;
+  border-radius: 4px;
+  box-sizing: content-box;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+
+  &:first-child {
+    margin-left: 0px;
+  }
 
   @media (max-width: 1024px) {
     margin-top: 24px;
+    margin-left: 0px;
 
     &:first-child {
       margin-top: 0px;
@@ -34,6 +47,7 @@ export const Name = styled.div`
   text-align: center;
   user-select: text;
   margin-top: 16px;
+  color: rgba(0, 0, 0, ${transparency.light.primaryText});
 
   ${robotoRegular()};
 `;
@@ -45,10 +59,13 @@ export const Socials = styled.div`
   justify-content: center;
 `;
 
-export const Social = styled.a`
+export const SocialIcon = styled.a`
   width: 24px;
   height: 24px;
   margin-left: 12px;
+  opacity: 0.6;
+  will-change: opacity;
+  transition: 0.15s opacity;
 
   ${centerImage('24px', 'auto')};
 
@@ -63,6 +80,10 @@ export const Social = styled.a`
       background-image: url(${url});
     `;
   }};
+
+  &:hover {
+    opacity: 1;
+  }
 
   &:first-child {
     margin-left: 0px;

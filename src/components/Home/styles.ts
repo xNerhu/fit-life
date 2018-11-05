@@ -50,11 +50,10 @@ export const StartSubtitle = styled.div`
   ${h5()};
 `;
 
-export const Organizators = styled.div`
+export const Leaders = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 8px;
 
   @media (max-width: 1024px) {
     flex-direction: column;

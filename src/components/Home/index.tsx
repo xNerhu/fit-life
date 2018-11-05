@@ -5,7 +5,7 @@ import Button from '../Button';
 import Section from '../Section';
 import Carousel from '../Carousel';
 import Textfield from '../Textfield';
-import Organizator from '../Organizator';
+import Leader from '../Leader';
 import Calendar from '../Calendar';
 import {
   Start,
@@ -17,7 +17,7 @@ import {
   ContactInfo,
   ContactLabel,
   ContactText,
-  Organizators,
+  Leaders,
   SecondBackground,
 } from './styles';
 
@@ -62,9 +62,9 @@ export default class Home extends React.Component {
           <Carousel items={carouselItems} />
         </Section>
 
-        <Section title="Prowadzący" style={{ marginTop: 96 }}>
-          <Organizators>
-            <Organizator
+        <Section title="Zespół" style={{ marginTop: 64 }}>
+          <Leaders>
+            <Leader
               name="Michał Ćwikła"
               avatar="https://scontent.fktw1-1.fna.fbcdn.net/v/t1.0-9/42111772_2144814845758736_8576482737249058816_n.jpg?_nc_cat=110&_nc_ht=scontent.fktw1-1.fna&oh=3d04cb81e7897d2b4d592de8afdba290&oe=5C414CBF"
               socials={[
@@ -75,7 +75,7 @@ export default class Home extends React.Component {
                 },
               ]}
             />
-            <Organizator
+            <Leader
               name="Martyna Wiej"
               avatar="https://scontent.fktw1-1.fna.fbcdn.net/v/t1.0-9/34838362_1052769738205144_1484576482612215808_n.jpg?_nc_cat=106&_nc_ht=scontent.fktw1-1.fna&oh=3b69bbd93f48970fa852bf17dc9f8b33&oe=5C82D8B9"
               socials={[
@@ -86,7 +86,7 @@ export default class Home extends React.Component {
                 },
               ]}
             />
-            <Organizator
+            <Leader
               name="Mikołaj Palkiewicz"
               avatar="https://avatars3.githubusercontent.com/u/12050791?s=460&v=4"
               socials={[
@@ -100,7 +100,7 @@ export default class Home extends React.Component {
                 },
               ]}
             />
-          </Organizators>
+          </Leaders>
         </Section>
 
         <SecondBackground>
