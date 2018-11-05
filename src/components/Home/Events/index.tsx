@@ -3,6 +3,7 @@ import * as React from 'react';
 import Section from '~/components/Section';
 import EventItem from '~/components/EventItem';
 import { SecondBackground } from '../styles';
+import { EventsContainer } from './styles';
 
 export default class Events extends React.Component {
   render() {
@@ -11,7 +12,9 @@ export default class Events extends React.Component {
     return (
       <SecondBackground>
         <Section title="Nadchodzące wydarzenia" style={style} horizontal>
-          <EventItem date={new Date()} />
+          <EventsContainer>
+            <EventItem title="Spotkanie" start={new Date()} end={new Date()} />
+          </EventsContainer>
         </Section>
       </SecondBackground>
     );
