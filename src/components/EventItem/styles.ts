@@ -11,7 +11,12 @@ export const Root = styled.div`
   border-radius: 4px;
   background-color: #fff;
   padding: 16px 8px;
+  margin-top: 16px;
   box-shadow: ${shadows(2)};
+
+  &:first-child {
+    margin-top: 0px;
+  }
 `;
 
 export const DateInfo = styled.div`

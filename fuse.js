@@ -43,6 +43,7 @@ const getWebIndexPlugin = name => {
   return WebIndexPlugin({
     template: `src/resources/page/${name}.html`,
     path: './',
+    scriptAttributes: ['defer'],
   });
 };
 

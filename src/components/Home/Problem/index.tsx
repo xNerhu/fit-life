@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { carouselItems } from '~/constants';
+import { carouselItems } from '~/content';
 import Section from '~/components/Section';
 import Carousel from '~/components/Carousel';
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { coverImage, edoRegular, h5 } from '~/mixins';
+import { coverImage, edoRegular, h5, centerImage, shadows } from '~/mixins';
 import { images } from '~/constants';
 
 export const Root = styled.div`
@@ -36,7 +36,20 @@ export const Container = styled.div`
   text-align: center;
 `;
 
+export const Logo = styled.div`
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+  background-color: #fff;
+  background-image: url(${images.logo});
+  margin: 0 auto;
+  box-shadow: ${shadows(5)};
+
+  ${centerImage('96px', 'auto')};
+`;
+
 export const Title = styled.div`
+  margin-top: 32px;
   font-size: 60px;
   color: #fff;
 

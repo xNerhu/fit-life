@@ -1,6 +1,6 @@
-import { CarouselItem } from '~/interfaces';
+import { ICarouselItem } from '~/interfaces';
 
-export const carouselItems: CarouselItem[] = [
+export const carouselItems: ICarouselItem[] = [
   {
     image: require('../resources/images/carousel/1.png').default,
     text:

@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import { shortMonths } from '~/constants';
 import { formatTime } from '~/utils';
+import { IEvent } from '~/interfaces';
 import {
   Root,
   DateInfo,
@@ -14,14 +15,12 @@ import {
 } from './styles';
 
 export interface Props {
-  start: Date;
-  end: Date;
-  title: string;
+  data: IEvent;
 }
 
 export default class EventItem extends React.Component<Props, {}> {
   render() {
-    const { start, end, title } = this.props;
+    const { start, end, title } = this.props.data;
 
     return (
       <Root>
