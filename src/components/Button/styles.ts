@@ -48,7 +48,11 @@ export const Root = styled.div`
       position: absolute;
       background-color: ${foreground};
       opacity: 0;
+      will-change: opacity;
       transition: 0.2s opacity;
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0) scale(1, 1);
     }
 
     &:hover::before {
