@@ -55,22 +55,18 @@ const getCopyPlugin = () => {
   });
 };
 
-const client = () => {
-  const config = getClientConfig();
+const config = getClientConfig();
 
-  config.plugins.push(getWebIndexPlugin('index'));
-  config.plugins.push(getCopyPlugin());
+config.plugins.push(getWebIndexPlugin('index'));
+config.plugins.push(getCopyPlugin());
 
-  const fuse = FuseBox.init(config);
-  const app = fuse.bundle('app').instructions('> ./index.tsx');
+const fuse = FuseBox.init(config);
+const app = fuse.bundle('app').instructions('> ./index.tsx');
 
-  if (!production) {
-    fuse.dev({ port: 8080 });
+if (!production) {
+  fuse.dev({ port: 8080 });
 
-    app.hmr().watch('*/**');
-  }
+  app.hmr().watch('*/**');
+}
 
-  fuse.run();
-};
-
-client();
+fuse.run();
