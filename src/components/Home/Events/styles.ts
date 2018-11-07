@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+import { MAX_SECTION_WIDTH } from '~/constants';
+
 export const Container = styled.div`
   width: 100%;
   max-width: 512px;
   margin-left: auto;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     margin-right: auto;
   }
 `;

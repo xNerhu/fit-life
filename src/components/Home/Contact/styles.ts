@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { transparency } from '~/constants';
+import { transparency, MAX_SECTION_WIDTH } from '~/constants';
 import { robotoMedium } from '~/mixins';
 
 export const Root = styled.div`
@@ -8,7 +8,7 @@ export const Root = styled.div`
   user-select: text;
   flex-direction: row;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     flex-direction: column;
   }
 `;
@@ -28,7 +28,7 @@ export const Form = styled.form`
     margin-top: 32px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -38,7 +38,7 @@ export const Form = styled.form`
 export const InfoContainer = styled.div`
   margin-left: 48px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     margin: 32px auto;
   }
 `;

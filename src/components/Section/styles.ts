@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 
-import { transparency, PRIMARY_COLOR } from '~/constants';
-import { robotoMedium, centerHorizontal } from '~/mixins';
+import { transparency, PRIMARY_COLOR, MAX_SECTION_WIDTH } from '~/constants';
+import { robotoMedium } from '~/mixins';
 
 export const Root = styled.section`
   width: 100%;
-  max-width: 1024px;
+  max-width: ${MAX_SECTION_WIDTH}px;
   margin: 0 auto;
   margin-top: 64px;
   display: flex;
@@ -14,7 +14,7 @@ export const Root = styled.section`
     flex-direction: ${horizontal ? 'row' : 'column'};
   `};
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     flex-direction: column;
   }
 `;
@@ -48,7 +48,7 @@ export const Title = styled.div`
     background-color: ${PRIMARY_COLOR};
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -68,7 +68,7 @@ export const Content = styled.div`
     padding-top: ${horizontal ? '0px' : '32px'};
   `};
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
     width: 100%;
     padding-top: 32px;
   }

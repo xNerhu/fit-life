@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { shadows } from '~/mixins';
 import { transparency } from '~/constants';
 
-export const Root = styled.div`
+export const Root = styled.a`
   width: 100%;
   height: 88px;
   display: flex;
@@ -12,6 +12,7 @@ export const Root = styled.div`
   background-color: #fff;
   padding: 16px 8px;
   margin-top: 16px;
+  text-decoration: none;
   box-shadow: ${shadows(2)};
 
   &:first-child {
@@ -42,6 +43,7 @@ export const Day = styled.div`
 
 export const Year = styled.div`
   font-size: 10px;
+  color: rgba(0, 0, 0, ${transparency.light.secondaryText});
 `;
 
 export const Container = styled.div`

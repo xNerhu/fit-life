@@ -20,10 +20,10 @@ export interface Props {
 
 export default class EventItem extends React.Component<Props, {}> {
   render() {
-    const { start, end, title } = this.props.data;
+    const { start, end, title, link } = this.props.data;
 
     return (
-      <Root>
+      <Root href={link}>
         <DateInfo>
           <Month>{shortMonths[start.getMonth()]}</Month>
           <Day>{start.getDate()}</Day>
