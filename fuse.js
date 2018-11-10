@@ -8,12 +8,12 @@ const {
 
 const production = process.env.NODE_ENV === 'dev' ? false : true;
 
-const getConfig = (target, type) => {
+const getConfig = (target, type, output = `build/$name.js`) => {
   return {
     homeDir: 'src/',
     cache: !production,
     target,
-    output: `build/$name.js`,
+    output,
     tsConfig: './tsconfig.json',
     useTypescriptCompiler: true,
     plugins: [
@@ -28,12 +28,16 @@ const getConfig = (target, type) => {
           },
         }),
     ],
-    alias: {},
+    alias: {
+      '@client': '~/client/',
+      '@server': '~/server/',
+      '~': '~/',
+    },
   };
 };
 
 const getClientConfig = () => {
-  return Object.assign({}, getConfig('browser@es6', 'app'), {
+  return Object.assign({}, getConfig('browser@es6', 'client'), {
     hash: production,
     sourceMaps: !production,
   });
@@ -41,7 +45,7 @@ const getClientConfig = () => {
 
 const getWebIndexPlugin = name => {
   return WebIndexPlugin({
-    template: `src/resources/page/${name}.html`,
+    template: `src/client/resources/pages/${name}.html`,
     path: './',
     scriptAttributes: ['defer'],
   });
@@ -55,18 +59,34 @@ const getCopyPlugin = () => {
   });
 };
 
-const config = getClientConfig();
+const client = () => {
+  const config = getClientConfig();
 
-config.plugins.push(getWebIndexPlugin('index'));
-config.plugins.push(getCopyPlugin());
+  config.plugins.push(getWebIndexPlugin('index'));
+  config.plugins.push(getCopyPlugin());
 
-const fuse = FuseBox.init(config);
-const app = fuse.bundle('app').instructions('> ./index.tsx');
+  const fuse = FuseBox.init(config);
+  const app = fuse.bundle('client').instructions('> client/index.tsx');
 
-if (!production) {
-  fuse.dev({ port: 8080 });
+  if (!production) {
+    fuse.dev({ port: 3000 });
 
-  app.hmr().watch('*/**');
-}
+    app.hmr().watch('client/**');
+  }
 
-fuse.run();
+  fuse.run();
+};
+
+const server = () => {
+  const fuse = FuseBox.init(getConfig('server', 'server', `$name.js`));
+  const app = fuse.bundle('server').instructions('> [server/index.ts]');
+
+  if (!production) {
+    app.watch('server/**').completed(proc => proc.start());
+  }
+
+  fuse.run();
+};
+
+client();
+server();

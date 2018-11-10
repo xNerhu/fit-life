@@ -7,3 +7,4 @@ dist
 .vs
 .awcache
 .fusebox
+server.js

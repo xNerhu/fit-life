@@ -5,7 +5,6 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "importHelpers": true,
     "alwaysStrict": true,
 
     "module": "commonjs",
@@ -21,6 +20,8 @@
     "baseUrl": "./",
 
     "paths": {
+      "@client/*": ["src/client/*"],
+      "@server/*": ["src/server/*"],
       "~/*": ["src/*"]
     }
   }
