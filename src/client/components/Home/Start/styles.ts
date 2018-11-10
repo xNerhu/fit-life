@@ -11,12 +11,12 @@ import { images } from '@client/constants';
 
 export const Root = styled.div`
   width: 100%;
-  min-height: 75vh;
+  height: 75vh;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  align-items: center;
 
   &::before {
     content: '';
@@ -28,16 +28,34 @@ export const Root = styled.div`
     left: 0;
     z-index: -1;
     transform: scale(1.1);
-    filter: blur(16px);
+    filter: blur(14px);
     background-position: center;
     background-attachment: fixed;
     background-image: url(${images.header});
 
     ${coverImage()};
   }
+
+  & .material-button {
+    position: absolute;
+    left: 50%;
+    bottom: -96px;
+    transform: translateX(-50%);
+  }
+
+  @media (max-height: 600px) {
+    & .material-button {
+      top: 48px;
+      bottom: 0px;
+      left: 0px;
+      transform: unset;
+      position: relative;
+    }
+  }
 `;
 
 export const Container = styled.div`
+  width: 100%;
   position: relative;
   text-align: center;
 `;
@@ -60,6 +78,10 @@ export const Title = styled.div`
   color: #fff;
 
   ${edoRegular()};
+
+  @media (max-width: 425px) {
+    font-size: 48px;
+  }
 `;
 
 export const Subtitle = styled.div`
@@ -67,4 +89,8 @@ export const Subtitle = styled.div`
   margin-top: 12px;
 
   ${h5()};
+
+  @media (max-width: 425px) {
+    font-size: 20px;
+  }
 `;

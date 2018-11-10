@@ -17,12 +17,6 @@ export default class Start extends React.Component {
             background={PRIMARY_COLOR}
             foreground="#000"
             text="WEŹ UDZIAŁ"
-            style={{
-              position: 'absolute',
-              left: '50%',
-              bottom: '-96px',
-              transform: 'translateX(-50%)',
-            }}
           />
         </Container>
       </Root>
