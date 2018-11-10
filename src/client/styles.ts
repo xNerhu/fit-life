@@ -54,4 +54,9 @@ export const Style = css`
   * {
     box-sizing: border-box;
   }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
 `;

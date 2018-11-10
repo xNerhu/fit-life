@@ -1,70 +1,69 @@
 import styled from 'styled-components';
 
-import { PRIMARY_COLOR, images, MAX_SECTION_WIDTH } from '@client/constants';
+import {
+  PRIMARY_COLOR,
+  images,
+  MAX_SECTION_WIDTH,
+  icons,
+} from '@client/constants';
 import { centerImage, robotoMedium } from '@client/mixins';
 
 export const Root = styled.footer`
-  width: 100vw;
   margin-top: 64px;
-  background-color: #424242;
 `;
 
-export const LinksContainer = styled.div`
-  width: 100%;
-  height: 56px;
+export const SocialLinks = styled.div`
+  width: 100vw;
+  height: 96px;
   background-color: ${PRIMARY_COLOR};
-`;
-
-export const Container = styled.div`
-  width: 100%;
-  max-width: ${MAX_SECTION_WIDTH}px;
-  min-height: 96px;
-  margin: 0 auto;
   display: flex;
-  padding: 32px 0px;
+  justify-content: center;
+  align-items: center;
 `;
 
-export const Column = styled.div`
-  height: 100%;
-  flex-grow: 1;
-  flex-basis: 0;
-  padding: 0px 32px;
-`;
+export const Icon = styled.a`
+  width: 96px;
+  height: 96px;
+  will-change: transform;
+  transition: 0.15s ease-out transform;
+  -webkit-backface-visibility: hidden;
 
-export const ColumnTitle = styled.div`
-  height: fit-content;
-  position: relative;
-  padding-bottom: 16px;
-  font-size: 16px;
-  color: #fff;
+  ${centerImage('32px', 'auto')};
 
-  ${robotoMedium()};
+  &:hover {
+    transform: scale(1.5);
+  }
 
-  &::before {
-    content: '';
-    display: block;
-    width: 96px;
-    height: 2px;
-    bottom: 0px;
-    position: absolute;
-    background-color: #c3e63d;
+  &:first-child {
+    margin-left: 0px;
   }
 `;
 
-export const ColumnItems = styled.div`
-  margin-top: 32px;
+export const FacebookIcon = styled(Icon)`
+  background-image: url(${icons.facebook});
 `;
 
-export const ColumnItem = styled.div`
-  margin-top: 8px;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+export const InstagramIcon = styled(Icon)`
+  background-image: url(${icons.instagram});
 `;
 
-export const Logo = styled.div`
-  width: 128px;
-  height: 128px;
-  background-image: url(${images.logo2});
+export const GithubIcon = styled(Icon)`
+  background-image: url(${icons.github});
+`;
 
-  ${centerImage('100%', 'auto')};
+export const Copyright = styled.div`
+  width: 100vw;
+  text-align: center;
+  padding: 24px 0px;
+  background-color: #424242;
+  color: #fff;
+  font-size: 15px;
+
+  a {
+    color: #fff;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 `;
