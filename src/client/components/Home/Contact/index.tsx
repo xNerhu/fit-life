@@ -3,7 +3,7 @@ import * as React from 'react';
 import Section from '@client/components/Section';
 import Textfield from '@client/components/Textfield';
 import Button from '@client/components/Button';
-import { Root, Form, InfoContainer, ContactLabel, ContactText } from './styles';
+import { Root, Form, InfoContainer, Label, Value } from './styles';
 
 export default class Contact extends React.Component {
   render() {
@@ -36,21 +36,11 @@ export default class Contact extends React.Component {
             />
           </Form>
           <InfoContainer>
-            <ContactText>
-              Zespół Szkół Ogólnokształcących Nr 2 w Opolu,
-              <br />
-              Generała Kazimierza Pułaskiego 3, 45-048 Opole
-            </ContactText>
+            <Label>E-MAIL</Label>
+            <Value>+48 783623157</Value>
             <br />
-            <br />
-            <ContactLabel>Telefon:</ContactLabel>
-            <ContactText style={{ float: 'right' }}>+48 783623157</ContactText>
-            <br />
-            <ContactLabel>E-mail:</ContactLabel>
-            <ContactText style={{ float: 'right' }}>
-              projekt.fit.life@onet.pl
-            </ContactText>
-            <div style={{ clear: 'both' }} />
+            <Label>TELEFON</Label>
+            <Value>projekt.fit.life@onet.pl</Value>
           </InfoContainer>
         </Root>
       </Section>

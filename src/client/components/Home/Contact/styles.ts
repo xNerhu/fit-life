@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { transparency, MAX_SECTION_WIDTH } from '@client/constants';
-import { robotoMedium } from '@client/mixins';
+import { robotoMedium, shadows } from '@client/mixins';
 
 export const Root = styled.div`
   display: flex;
@@ -14,15 +14,16 @@ export const Root = styled.div`
 `;
 
 export const Form = styled.form`
-  width: 75%;
+  width: 50%;
   padding: 32px;
-  box-sizing: content-box;
   display: flex;
   flex-direction: column;
   justify-items: center;
   border-radius: 4px;
+  overflow: hidden;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, ${transparency.light.dividers});
+  box-sizing: content-box;
+  box-shadow: ${shadows(3)};
 
   & .material-textfield {
     margin-top: 32px;
@@ -37,20 +38,33 @@ export const Form = styled.form`
 
 export const InfoContainer = styled.div`
   margin-left: 48px;
+  padding: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #fff;
+  box-sizing: content-box;
+  box-shadow: ${shadows(3)};
 
   @media (max-width: ${MAX_SECTION_WIDTH}px) {
     margin: 32px auto;
   }
 `;
 
-export const ContactLabel = styled.span`
+export const Label = styled.div`
+  width: 96px;
+  display: inline-block;
   font-size: 17px;
   margin-right: 16px;
+  user-select: none;
+  color: rgba(0, 0, 0, ${transparency.light.primaryText});
+`;
+
+export const Value = styled.div`
+  min-width: calc(100% - 112px);
+  display: inline-block;
+  text-align: right;
+  font-size: 17px;
   color: rgba(0, 0, 0, ${transparency.light.primaryText});
 
   ${robotoMedium()};
-`;
-
-export const ContactText = styled.span`
-  font-size: 17px;
 `;
