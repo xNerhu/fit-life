@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
 import { images, PRIMARY_COLOR } from '@client/constants';
-import { coverImage, centerImage, gidoleRegular } from '@client/mixins';
+import {
+  coverImage,
+  centerImage,
+  gidoleRegular,
+  backImage,
+} from '@client/mixins';
 
 export const Root = styled.div`
   width: 100vw;
@@ -13,19 +18,7 @@ export const Root = styled.div`
   align-items: center;
 
   &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-position: center;
-    background-attachment: fixed;
-    background-image: url(${images.road});
-
-    ${coverImage()};
+    ${backImage(images.road)};
   }
 `;
 

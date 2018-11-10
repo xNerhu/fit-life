@@ -6,6 +6,7 @@ import {
   h5,
   centerImage,
   shadows,
+  backImage,
 } from '@client/mixins';
 import { images } from '@client/constants';
 
@@ -19,21 +20,10 @@ export const Root = styled.div`
   align-items: center;
 
   &::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transform: scale(1.1);
     filter: blur(14px);
-    background-position: center;
-    background-attachment: fixed;
-    background-image: url(${images.header});
+    transform: scale(1.1);
 
-    ${coverImage()};
+    ${backImage(images.header)};
   }
 
   & .material-button {

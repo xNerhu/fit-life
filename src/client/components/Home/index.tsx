@@ -8,6 +8,7 @@ import Events from './Events';
 import Contact from './Contact';
 import Sponsors from './Sponsors';
 import Motto from './Motto';
+import Footer from './Footer';
 
 export default class Home extends React.Component {
   render() {
@@ -21,6 +22,7 @@ export default class Home extends React.Component {
         <Sponsors />
         <Motto />
         <Contact />
+        <Footer />
       </React.Fragment>
     );
   }
