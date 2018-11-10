@@ -7,6 +7,7 @@ import Team from './Team';
 import Events from './Events';
 import Contact from './Contact';
 import Sponsors from './Sponsors';
+import Motto from './Motto';
 
 export default class Home extends React.Component {
   render() {
@@ -18,6 +19,7 @@ export default class Home extends React.Component {
         <Team />
         <Events />
         <Sponsors />
+        <Motto />
         <Contact />
       </React.Fragment>
     );

@@ -21,6 +21,11 @@ font-family: Edo;
 font-weight: 400;
 `;
 
+export const gidoleRegular = () => `
+font-family: Gidole;
+font-weight: 400;
+`;
+
 export const h1 = () => `
   ${robotoLight()};
   letter-spacing: ${getLetterSpacing(96, -1.5)}rem;

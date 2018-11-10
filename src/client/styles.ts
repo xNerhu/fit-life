@@ -32,6 +32,13 @@ export const Style = css`
     src: url(${fonts.edoRegular}) format('woff2');
   }
 
+  @font-face {
+    font-family: 'Gidole';
+    font-style: normal;
+    font-weight: 400;
+    src: url(${fonts.gidoleRegular}) format('woff2');
+  }
+
   body {
     width: 100vw;
     height: 100vh;
