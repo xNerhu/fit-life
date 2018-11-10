@@ -14,7 +14,7 @@ export const Root = styled.div`
   transition: 0.15s background-color;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.08);
+    background-color: rgba(0, 0, 0, 0.04);
   }
 
   &:first-child {

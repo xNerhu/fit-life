@@ -8,7 +8,7 @@ import { Container, EventsContainer } from './styles';
 
 export default class Events extends React.Component {
   render() {
-    const style = { paddingTop: 24 };
+    const style = { paddingTop: 24, paddingBottom: 24 };
 
     const time = new Date().getTime();
 
