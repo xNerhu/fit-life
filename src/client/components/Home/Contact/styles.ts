@@ -36,9 +36,8 @@ export const Form = styled.form`
   }
 `;
 
-export const InfoContainer = styled.div`
+export const Info = styled.div`
   margin-left: 48px;
-  padding: 32px;
   border-radius: 4px;
   overflow: hidden;
   background-color: #fff;
@@ -50,17 +49,26 @@ export const InfoContainer = styled.div`
   }
 `;
 
+export const InfoContainer = styled.div`
+  padding: 24px;
+`;
+
 export const Label = styled.div`
   width: 96px;
   display: inline-block;
   font-size: 17px;
   margin-right: 16px;
+  margin-top: 4px;
   user-select: none;
   color: rgba(0, 0, 0, ${transparency.light.primaryText});
+
+  &:first-child {
+    margin-top: 0px;
+  }
 `;
 
 export const Value = styled.div`
-  min-width: calc(100% - 112px);
+  width: calc(100% - 112px);
   display: inline-block;
   text-align: right;
   font-size: 17px;
