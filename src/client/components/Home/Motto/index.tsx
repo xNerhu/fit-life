@@ -2,13 +2,14 @@ import * as React from 'react';
 
 import Button from '@client/components/Button';
 import { PRIMARY_COLOR } from '@client/constants';
-import { Root, Triangle, Text, Logo } from './styles';
+import { Triangle } from '../styles';
+import { Root, Text, Logo } from './styles';
 
 export default class Motto extends React.Component {
   render() {
     return (
       <Root>
-        <Triangle />
+        <Triangle color={PRIMARY_COLOR} />
         <Text>
           ZAWSZE DĄŻYMY DO CELU
           <br />

@@ -22,14 +22,6 @@ export const Root = styled.div`
   }
 `;
 
-export const Triangle = styled.div`
-  width: 0px;
-  height: 0px;
-  border-style: solid;
-  border-width: 64px 96px 0 96px;
-  border-color: ${PRIMARY_COLOR} transparent transparent transparent;
-`;
-
 export const Text = styled.div`
   margin-top: 64px;
   color: #fff;

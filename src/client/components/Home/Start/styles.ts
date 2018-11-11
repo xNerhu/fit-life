@@ -18,6 +18,8 @@ export const Root = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.12);
+  box-shadow: ${shadows(3)};
 
   &::before {
     filter: blur(14px);
