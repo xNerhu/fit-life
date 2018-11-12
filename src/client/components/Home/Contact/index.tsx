@@ -10,8 +10,8 @@ import { Root, Form, Info, InfoContainer, Label, Value } from './styles';
 export default class Contact extends React.Component {
   render() {
     const schoolPos = {
-      lat: 50.099139,
-      lng: 18.550853,
+      lat: 50.673393,
+      lng: 17.924187,
     };
 
     return (
