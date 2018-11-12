@@ -38,18 +38,18 @@ export const Container = styled.div`
   padding-right: 24px;
   width: auto;
   display: flex;
-`;
 
-export const Item = styled.div`
-  width: auto;
-  padding: 12px 12px;
-  margin-right: 8px;
-  font-size: 17px;
-  border-radius: 4px;
-  overflow: hidden;
-  cursor: pointer;
+  a {
+    width: auto;
+    padding: 12px 12px;
+    margin-right: 8px;
+    font-size: 17px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
 
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
   }
 `;

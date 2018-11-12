@@ -7,7 +7,7 @@ import Carousel from '@client/components/Carousel';
 export default class Problem extends React.Component {
   render() {
     return (
-      <Section title="O problemie i sposobach jego ograniczenia">
+      <Section id="problem" title="O problemie i sposobach jego ograniczenia">
         <Carousel items={carouselItems} />
       </Section>
     );

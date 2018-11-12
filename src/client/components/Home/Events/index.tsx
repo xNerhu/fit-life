@@ -13,7 +13,7 @@ export default class Events extends React.Component {
 
     return (
       <Background>
-        <Section title="Nadchodzące wydarzenia" style={style}>
+        <Section id="events" title="Nadchodzące wydarzenia" style={style}>
           <Container>
             {events.map((data, key) => {
               const date = data.start;

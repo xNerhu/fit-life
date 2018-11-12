@@ -7,7 +7,7 @@ import { Root } from './styles';
 export default class Team extends React.Component {
   render() {
     return (
-      <Section title="Zespół" style={{ marginTop: 64 }}>
+      <Section id="team" title="Zespół" style={{ marginTop: 64 }}>
         <Root>
           <TeamMember
             name="Michał Ćwikła"

@@ -10,9 +10,6 @@ class App extends React.Component {
       <BrowserRouter>
         <React.Fragment>
           <NavigationBar />
-          <div style={{ marginTop: 64 }}>
-            <Link to="/xd">About</Link>
-          </div>
           <Route component={Home} />
         </React.Fragment>
       </BrowserRouter>

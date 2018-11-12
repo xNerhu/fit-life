@@ -10,6 +10,7 @@ export default class About extends React.Component {
       <React.Fragment>
         <Background style={{ padding: '64px 0px', backgroundColor: '#eee' }}>
           <Section
+            id="about"
             title="O projekcie"
             dividerColor="#000"
             style={{ marginTop: 0, color: '#000' }}

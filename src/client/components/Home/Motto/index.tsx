@@ -8,7 +8,7 @@ import { Root, Text, Logo } from './styles';
 export default class Motto extends React.Component {
   render() {
     return (
-      <Root>
+      <Root id="motto">
         <Triangle color={PRIMARY_COLOR} />
         <Text>
           ZAWSZE DĄŻYMY DO CELU

@@ -7,7 +7,7 @@ import { Root, Container, Logo, Title, Subtitle } from './styles';
 export default class Start extends React.Component {
   render() {
     return (
-      <Root>
+      <Root id="start">
         <Container>
           <Logo />
           <Title>Projekt Fit Life</Title>
