@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 import Section from '@client/components/Section';
-import { Triangle, LimeBackground } from '../styles';
-import { PRIMARY_COLOR } from '@client/constants';
+import { Triangle } from '../styles';
+import { Background } from './styles';
 
 export default class About extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <LimeBackground style={{ padding: '64px 0px' }}>
+        <Background style={{ padding: '64px 0px', backgroundColor: '#eee' }}>
           <Section
             title="O projekcie"
             dividerColor="#000"
@@ -20,8 +20,8 @@ export default class About extends React.Component {
             repudiandae, et eligendi voluptatum saepe nisi maxime magnam.
             Numquam cumque veniam placeat.
           </Section>
-        </LimeBackground>
-        <Triangle color={PRIMARY_COLOR} />
+        </Background>
+        <Triangle color="#eee" />
       </React.Fragment>
     );
   }

@@ -33,7 +33,7 @@ export const Style = css`
   }
 
   @font-face {
-    font-family: 'Gidole';
+    font-family: 'Gidole', sans-serif;
     font-style: normal;
     font-weight: 400;
     src: url(${fonts.gidoleRegular}) format('woff2');

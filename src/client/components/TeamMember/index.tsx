@@ -1,34 +1,21 @@
 import * as React from 'react';
 
-import { Root, Avatar, Name, Socials, SocialIcon } from './styles';
-import { ISocialLink } from '~/interfaces';
+import { Root, Avatar, Name } from './styles';
 
 export interface Props {
   avatar: string;
   name: string;
-  socials?: ISocialLink[];
+  url: string;
 }
 
 export default class TeamMember extends React.Component<Props, {}> {
   render() {
-    const { avatar, name, socials } = this.props;
+    const { avatar, name, url } = this.props;
 
     return (
-      <Root>
+      <Root href={url} target="_blank">
         <Avatar url={avatar} />
         <Name>{name}</Name>
-        <Socials>
-          {socials.map((data, key) => {
-            return (
-              <SocialIcon
-                href={data.url}
-                type={data.type}
-                key={key}
-                target="_blank"
-              />
-            );
-          })}
-        </Socials>
       </Root>
     );
   }

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import {
-  coverImage,
   edoRegular,
   h5,
   centerImage,
@@ -19,7 +18,6 @@ export const Root = styled.div`
   display: flex;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.12);
-  box-shadow: ${shadows(3)};
 
   &::before {
     filter: blur(14px);

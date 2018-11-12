@@ -1,16 +1,12 @@
 import styled from 'styled-components';
 
-import { images, PRIMARY_COLOR } from '@client/constants';
-import {
-  coverImage,
-  centerImage,
-  gidoleRegular,
-  backImage,
-} from '@client/mixins';
+import { images } from '@client/constants';
+import { centerImage, gidoleRegular, backImage } from '@client/mixins';
 
 export const Root = styled.div`
   width: 100vw;
   height: 75vh;
+  min-height: 656px;
   overflow: hidden;
   position: relative;
   display: flex;

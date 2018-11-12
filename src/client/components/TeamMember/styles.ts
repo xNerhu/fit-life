@@ -1,20 +1,30 @@
 import styled, { css } from 'styled-components';
 
-import { coverImage, robotoRegular, centerImage } from '@client/mixins';
+import {
+  coverImage,
+  robotoRegular,
+  centerImage,
+  shadows,
+} from '@client/mixins';
 import { icons, transparency } from '@client/constants';
 
-export const Root = styled.div`
+export const Root = styled.a`
   width: 196px;
-  padding: 16px 8px;
+  padding: 32px 0;
   margin-left: 48px;
   border-radius: 4px;
+  overflow: hidden;
   box-sizing: content-box;
   cursor: pointer;
-  will-change: background-color;
-  transition: 0.15s background-color;
+  background-color: #fff;
+  box-shadow: ${shadows(2)};
+  will-change: transform;
+  transition: 0.15s ease-out transform;
+  -webkit-backface-visibility: hidden;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+    z-index: 10;
+    transform: scale(1.25) translateZ(0);
   }
 
   &:first-child {
@@ -32,8 +42,8 @@ export const Root = styled.div`
 `;
 
 export const Avatar = styled.div`
-  width: 128px;
-  height: 128px;
+  width: 96px;
+  height: 96px;
   border-radius: 100%;
   background-color: #fff;
   margin: 0 auto;
@@ -46,7 +56,7 @@ export const Avatar = styled.div`
 `;
 
 export const Name = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   user-select: text;
   margin-top: 16px;

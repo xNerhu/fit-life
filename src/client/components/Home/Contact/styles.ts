@@ -45,6 +45,8 @@ export const Info = styled.div`
   box-shadow: ${shadows(3)};
 
   @media (max-width: ${MAX_SECTION_WIDTH}px) {
+    width: 100%;
+    height: 512px;
     margin: 32px auto;
   }
 `;

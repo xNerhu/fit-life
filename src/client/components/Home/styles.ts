@@ -1,19 +1,5 @@
 import styled, { css } from 'styled-components';
 
-import { PRIMARY_COLOR } from '@client/constants';
-
-export const SecondBackground = styled.div`
-  width: 100%;
-  background-color: #fafafa;
-  margin-top: 64px;
-  padding-bottom: 24px;
-`;
-
-export const LimeBackground = styled.div`
-  width: 100%;
-  background-color: ${PRIMARY_COLOR};
-`;
-
 export const Triangle = styled.div`
   width: 0px;
   height: 0px;

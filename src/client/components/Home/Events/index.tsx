@@ -3,8 +3,7 @@ import * as React from 'react';
 import Section from '@client/components/Section';
 import EventItem from '@client/components/EventItem';
 import { events } from '@client/content';
-import { SecondBackground } from '../styles';
-import { Container } from './styles';
+import { Container, Background } from './styles';
 
 export default class Events extends React.Component {
   render() {
@@ -13,7 +12,7 @@ export default class Events extends React.Component {
     const time = new Date().getTime();
 
     return (
-      <SecondBackground>
+      <Background>
         <Section title="Nadchodzące wydarzenia" style={style}>
           <Container>
             {events.map((data, key) => {
@@ -26,7 +25,7 @@ export default class Events extends React.Component {
             })}
           </Container>
         </Section>
-      </SecondBackground>
+      </Background>
     );
   }
 }

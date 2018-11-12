@@ -1,3 +1,6 @@
 import styled from 'styled-components';
 
-import { PRIMARY_COLOR } from '@client/constants';
+export const Background = styled.div`
+  width: 100%;
+  background-color: #eee;
+`;
