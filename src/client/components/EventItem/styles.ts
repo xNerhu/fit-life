@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { shadows } from '@client/mixins';
+import { shadows, robotoRegular, robotoMedium } from '@client/mixins';
 import { transparency } from '@client/constants';
 
 export const Root = styled.a`

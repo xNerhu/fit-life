@@ -7,6 +7,7 @@ import {
   shadows,
   centerVertical,
   centerBoth,
+  robotoMedium,
 } from '@client/mixins';
 import { transparency, icons } from '@client/constants';
 
@@ -68,6 +69,7 @@ export const TextContainer = styled.div`
   background-color: rgba(0, 0, 0, 0.48);
 
   ${centerHorizontal()};
+  ${robotoMedium()};
 `;
 
 export const CirclesContainer = styled.div`
@@ -97,16 +99,24 @@ export const Circle = styled.div`
     );
   `};
 
-  &:hover::before {
+  &::before {
     content: '';
-    width: 36px;
-    height: 36px;
+    width: 0px;
+    height: 0px;
     display: block;
     position: absolute;
     border-radius: 100%;
     background-color: rgba(255, 255, 255, 0.12);
+    pointer-events: none;
+    will-change: width, height;
+    transition: 0.2s ease-out width, 0.2s ease-out height;
 
     ${centerBoth()};
+  }
+
+  &:hover::before {
+    width: 36px;
+    height: 36px;
   }
 
   &:first-child {

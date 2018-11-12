@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { CarouselItem } from '~/interfaces';
+import { ICarouselItem } from '@client/interfaces';
 import {
   Root,
   Image,
@@ -11,12 +11,12 @@ import {
 } from './styles';
 
 export interface Props {
-  items: CarouselItem[];
+  items: ICarouselItem[];
   style?: any;
 }
 
 interface State {
-  current: CarouselItem;
+  current: ICarouselItem;
 }
 
 export default class Carousel extends React.Component<Props, State> {
