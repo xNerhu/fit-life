@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { shadows, robotoRegular, robotoMedium } from '@client/mixins';
+import { shadows } from '@client/mixins';
 import { transparency } from '@client/constants';
 
 export const Root = styled.a`
@@ -12,8 +12,17 @@ export const Root = styled.a`
   background-color: #fff;
   padding: 16px 8px;
   margin-top: 16px;
+  cursor: pointer;
   text-decoration: none;
   box-shadow: ${shadows(2)};
+  will-change: transform;
+  transition: 0.15s ease-out transform;
+  -webkit-backface-visibility: hidden;
+
+  &:hover {
+    z-index: 10;
+    transform: scale(1.1);
+  }
 
   &:first-child {
     margin-top: 0px;
@@ -47,7 +56,7 @@ export const Year = styled.div`
 `;
 
 export const Container = styled.div`
-  margin-left: 32px;
+  padding: 0px 32px;
 `;
 
 export const Title = styled.div`

@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import NavigationBar from '../NavigationBar';
 import Start from './Start';
 import About from './About';
 import Problem from './Problem';
@@ -42,6 +43,7 @@ export default class Home extends React.Component<Props, {}> {
   render() {
     return (
       <React.Fragment>
+        <NavigationBar />
         <Start />
         <About />
         <Problem />

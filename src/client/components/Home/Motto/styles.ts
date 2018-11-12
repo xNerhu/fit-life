@@ -6,7 +6,7 @@ import { centerImage, gidoleRegular, backImage } from '@client/mixins';
 export const Root = styled.div`
   width: 100vw;
   height: 75vh;
-  min-height: 656px;
+  min-height: 688px;
   overflow: hidden;
   position: relative;
   display: flex;

@@ -13,6 +13,7 @@ export const Root = styled.div`
   width: 100%;
   height: 75vh;
   min-height: 600px;
+  margin-top: 56px;
   position: relative;
   overflow: hidden;
   display: flex;

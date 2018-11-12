@@ -10,6 +10,7 @@ export interface Props {
   titleColor?: string;
   dividerColor?: string;
   style?: any;
+  contentStyle?: any;
 }
 
 export default class Section extends React.Component<Props, {}> {
@@ -29,6 +30,7 @@ export default class Section extends React.Component<Props, {}> {
       title,
       children,
       style,
+      contentStyle,
     } = this.props;
 
     return (
@@ -40,7 +42,9 @@ export default class Section extends React.Component<Props, {}> {
         >
           {title}
         </Title>
-        <Content horizontal={horizontal}>{children}</Content>
+        <Content horizontal={horizontal} style={contentStyle}>
+          {children}
+        </Content>
       </Root>
     );
   }

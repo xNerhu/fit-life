@@ -9,7 +9,7 @@ import {
   centerBoth,
   robotoMedium,
 } from '@client/mixins';
-import { transparency, icons } from '@client/constants';
+import { transparency, icons, MAX_SECTION_WIDTH } from '@client/constants';
 
 export const Root = styled.div`
   width: 100%;
@@ -18,6 +18,10 @@ export const Root = styled.div`
   overflow: hidden;
   position: relative;
   box-shadow: ${shadows(4)};
+
+  @media (max-width: ${MAX_SECTION_WIDTH}px) {
+    min-height: 512px;
+  }
 `;
 
 export const Image = styled.div`

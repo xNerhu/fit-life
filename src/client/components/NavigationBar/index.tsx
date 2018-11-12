@@ -1,15 +1,27 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Root, Title, Logo, Container } from './styles';
+import { Root, Brand, Title, Logo, Container } from './styles';
 
-export default class NavigationBar extends React.Component {
+export interface State {
+  activated: boolean;
+}
+
+export default class NavigationBar extends React.Component<{}, State> {
+  public state: State = {
+    activated: true,
+  };
+
   render() {
+    const { activated } = this.state;
+
     return (
-      <Root>
-        <Logo />
-        <Title>Projekt Fit Life</Title>
-        <Container>
+      <Root activated={activated}>
+        <Brand activated={activated}>
+          <Logo />
+          <Title>Projekt Fit Life</Title>
+        </Brand>
+        <Container activated={activated}>
           <Link to="/start">Start</Link>
           <Link to="/about">O projekcie</Link>
           <Link to="/problem">O problemie</Link>
