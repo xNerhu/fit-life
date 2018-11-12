@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 import NavigationBar from '../NavigationBar';
 import Home from '../Home';
@@ -10,7 +10,10 @@ class App extends React.Component {
       <BrowserRouter>
         <React.Fragment>
           <NavigationBar />
-          <Route path="/" component={Home} />
+          <div style={{ marginTop: 64 }}>
+            <Link to="/xd">About</Link>
+          </div>
+          <Route component={Home} />
         </React.Fragment>
       </BrowserRouter>
     );

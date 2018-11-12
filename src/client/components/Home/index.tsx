@@ -10,7 +10,21 @@ import Sponsors from './Sponsors';
 import Motto from './Motto';
 import Footer from './Footer';
 
-export default class Home extends React.Component {
+export interface Props {
+  history: any;
+}
+
+export default class Home extends React.Component<Props, {}> {
+  componentWillMount() {
+    const { history } = this.props;
+
+    history.listen(() => {
+      const { history } = this.props;
+
+      console.log('New URL', history.location.pathname);
+    });
+  }
+
   render() {
     return (
       <React.Fragment>

@@ -69,7 +69,10 @@ const client = () => {
   const app = fuse.bundle('client').instructions('> client/index.tsx');
 
   if (!production) {
-    fuse.dev({ port: 3000 });
+    fuse.dev({
+      port: 3000,
+      fallback: 'index.html',
+    });
 
     app.hmr().watch('client/**');
   }
