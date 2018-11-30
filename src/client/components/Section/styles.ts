@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { transparency, MAX_SECTION_WIDTH } from '@client/constants';
-import { robotoMedium } from '@client/mixins';
+import { robotoMedium, robotoRegular } from '@client/mixins';
 
 export const Root = styled.section`
   width: 100%;
@@ -69,7 +69,7 @@ export const Content = styled.div`
   padding-left: 24px;
   padding-right: 24px;
   font-size: 17px;
-  color: rgba(0, 0, 0, ${transparency.light.secondaryText});
+  color: rgba(0, 0, 0, ${transparency.light.primaryText});
 
   ${({ horizontal }: { horizontal: boolean }) => css`
     width: ${horizontal ? '75%' : '100%'};

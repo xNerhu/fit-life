@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import Section from '@client/components/Section';
 import { Triangle } from '../styles';
-import { Background } from './styles';
+import { Background, Bold, Link } from './styles';
 
 export default class About extends React.Component {
   render() {
@@ -16,10 +16,26 @@ export default class About extends React.Component {
             style={{ marginTop: 0, color: '#000' }}
             horizontal
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-            rem veniam voluptates, rerum quod eum molestiae dolorem perspiciatis
-            repudiandae, et eligendi voluptatum saepe nisi maxime magnam.
-            Numquam cumque veniam placeat.
+            <Bold>Projekt Fit Life</Bold> to inicjatywa zachęcająca do&nbsp;
+            <Bold>prowadzenia zdrowego trybu życia</Bold>, a tym samym walkę z
+            szerzącym się problemem społecznym. Jednak nasz projekt nie
+            ogranicza się jedynie do ćwiczeń i odpowiedniego odżywiania się,
+            pokazuje też jak ważna jest sfera psychiczna. Te dwie pozornie
+            odmienne strefy się od siebie różnią, ale jednak są od siebie
+            zależne i chcemy, aby jak najwięcej osób zdało sobie z tego sprawę.
+            Nasze działania polegają na&nbsp;
+            <Bold>
+              organizowaniu konferencji z ekspertami oraz ciekawymi ludźmi
+            </Bold>
+            , którzy tak jak my chcą się dzielić wiedzą w zakresie zmian swojego
+            życia na lepsze. Oprócz zajęć teoretycznych prowadzimy również te,
+            na których można razem z nami odkryć nowe ćwiczenia, lub spróbować
+            swoich sił w dotąd nieznanych dziedzinach sportowych. Nasze
+            działania są prowadzone głównie na terenie&nbsp;
+            <Bold>województwa opolskiego</Bold>, ale planujemy poszerzyć ich
+            zasięg. Jednak jeśli nie masz możliwości uczestniczyć w spotkaniach
+            w tych okolicach, to nic straconego! Specjalnie dla ciebie
+            przygotowaliśmy dwa programy <Link href="/oof">„100 dni”</Link>
           </Section>
         </Background>
         <Triangle color="#eee" />
