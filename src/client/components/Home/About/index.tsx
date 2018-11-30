@@ -34,8 +34,9 @@ export default class About extends React.Component {
             działania są prowadzone głównie na terenie&nbsp;
             <Bold>województwa opolskiego</Bold>, ale planujemy poszerzyć ich
             zasięg. Jednak jeśli nie masz możliwości uczestniczyć w spotkaniach
-            w tych okolicach, to nic straconego! Specjalnie dla ciebie
-            przygotowaliśmy dwa programy <Link href="/oof">„100 dni”</Link>
+            w tych okolicach, to nic straconego! Specjalnie&nbsp;
+            <Bold>dla ciebie</Bold> przygotowaliśmy dwa programy&nbsp;
+            <Link href="/oof">„100 dni”</Link>.
           </Section>
         </Background>
         <Triangle color="#eee" />

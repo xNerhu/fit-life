@@ -1,16 +1,12 @@
 import styled, { css } from 'styled-components';
 
-import {
-  coverImage,
-  robotoRegular,
-  centerImage,
-  shadows,
-} from '@client/mixins';
-import { icons, transparency } from '@client/constants';
+import { coverImage, robotoRegular, shadows } from '@client/mixins';
+import { transparency } from '@client/constants';
 
 export const Root = styled.a`
   width: 196px;
   padding: 32px 0;
+  margin-top: 32px;
   margin-left: 48px;
   border-radius: 4px;
   overflow: hidden;
@@ -32,7 +28,6 @@ export const Root = styled.a`
   }
 
   @media (max-width: 1024px) {
-    margin-top: 24px;
     margin-left: 0px;
 
     &:first-child {
@@ -45,7 +40,7 @@ export const Avatar = styled.div`
   width: 96px;
   height: 96px;
   border-radius: 100%;
-  background-color: #fff;
+  background-color: #fafafa;
   margin: 0 auto;
 
   ${coverImage()};
@@ -63,42 +58,4 @@ export const Name = styled.div`
   color: rgba(0, 0, 0, ${transparency.light.primaryText});
 
   ${robotoRegular()};
-`;
-
-export const Socials = styled.div`
-  width: 100%;
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-`;
-
-export const SocialIcon = styled.a`
-  width: 24px;
-  height: 24px;
-  margin-left: 12px;
-  opacity: 0.6;
-  will-change: opacity;
-  transition: 0.15s opacity;
-
-  ${centerImage('24px', 'auto')};
-
-  ${({ type }: { type: 'facebook' | 'github' | 'instagram' }) => {
-    let url;
-
-    if (type === 'facebook') url = icons.facebook;
-    if (type === 'github') url = icons.github;
-    if (type === 'instagram') url = icons.instagram;
-
-    return css`
-      background-image: url(${url});
-    `;
-  }};
-
-  &:hover {
-    opacity: 1;
-  }
-
-  &:first-child {
-    margin-left: 0px;
-  }
 `;

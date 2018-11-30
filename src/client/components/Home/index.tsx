@@ -7,7 +7,7 @@ import Problem from './Problem';
 import Team from './Team';
 import Events from './Events';
 import Contact from './Contact';
-import Sponsors from './Sponsors';
+import Partnership from './Partnership';
 import Motto from './Motto';
 import Footer from './Footer';
 
@@ -49,7 +49,7 @@ export default class Home extends React.Component<Props, {}> {
         <Problem />
         <Team />
         <Events />
-        <Sponsors />
+        <Partnership />
         <Motto />
         <Contact />
         <Footer />

@@ -27,7 +27,7 @@ export default class NavigationBar extends React.Component<{}, State> {
           <Link to="/problem">O problemie</Link>
           <Link to="/team">Zespół</Link>
           <Link to="/events">Wydarzenia</Link>
-          <Link to="/sponsors">Sponsorzy</Link>
+          <Link to="/partnership">Współpraca</Link>
           <Link to="/contact">Kontakt</Link>
         </Container>
       </Root>
