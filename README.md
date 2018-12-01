@@ -2,7 +2,7 @@
 
 # Projekt Fit Life
 
-Strona [projektu](https://pages.github.com/) do konkursu [zwolnienizteorii.pl](https://zwolnienizteorii.pl/).
+Strona [projektu](http://fit.stroma.tk:9090/) do konkursu [zwolnienizteorii.pl](https://zwolnienizteorii.pl/).
 <br />
 
 <br />
