@@ -3,7 +3,5 @@
 # Projekt Fit Life
 
 Strona [projektu](http://fit.stroma.tk:9090/) do konkursu [zwolnienizteorii.pl](https://zwolnienizteorii.pl/).
-<br />
 
-<br />
-Projekt Fit Life to inicjatywa zachęcająca do prowadzenia zdrowego trybu życia, a tym samym walkę z szerzącym się problemem społecznym. [Więcej](http://fit.stroma.tk:9090/about)
+Projekt Fit Life to inicjatywa zachęcająca do prowadzenia zdrowego trybu życia, a tym samym walkę z szerzącym się problemem społecznym.  [Więcej](http://fit.stroma.tk:9090/about)
