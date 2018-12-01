@@ -24,9 +24,12 @@ export default class Carousel extends React.Component<Props, State> {
     current: null,
   };
 
+  private timer: NodeJS.Timeout;
+
   componentDidMount() {
     const { items } = this.props;
     this.setState({ current: items[0] });
+    this.setTimer();
   }
 
   public select = (next = false) => {
@@ -44,6 +47,14 @@ export default class Carousel extends React.Component<Props, State> {
     }
 
     this.setState({ current: items[index] });
+    this.setTimer();
+  };
+
+  private setTimer = () => {
+    clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      this.select(true);
+    }, 15 * 1000); // 15 seconds
   };
 
   render() {

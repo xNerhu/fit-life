@@ -32,7 +32,8 @@ export default class EventItem extends React.Component<Props, {}> {
         <Container>
           <Title>{title}</Title>
           <Subtitle>
-            {formatTime(start)} — {formatTime(end)}
+            {start.getHours() !== 0 &&
+              `${formatTime(start)} — ${formatTime(end)}`}
           </Subtitle>
         </Container>
       </Root>
