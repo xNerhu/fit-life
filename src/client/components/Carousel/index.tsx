@@ -29,7 +29,7 @@ export default class Carousel extends React.Component<Props, State> {
     this.setState({ current: items[0] });
   }
 
-  public select = (next = false, timer = false) => {
+  public select = (next = false) => {
     const { items } = this.props;
     const { current } = this.state;
 

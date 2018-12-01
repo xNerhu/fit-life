@@ -47,7 +47,6 @@ const getWebIndexPlugin = name => {
   return WebIndexPlugin({
     template: `src/client/resources/pages/${name}.html`,
     path: './',
-    scriptAttributes: ['defer'],
   });
 };
 
