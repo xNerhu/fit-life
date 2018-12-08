@@ -7,6 +7,7 @@ import {
   InstagramIcon,
   GithubIcon,
   Copyright,
+  Link,
 } from './styles';
 
 export default class Footer extends React.Component {
@@ -29,7 +30,7 @@ export default class Footer extends React.Component {
         </SocialLinks>
         <Copyright>
           &copy; 2018&nbsp;
-          <a href="https://github.com/xnerhu/">Mikołaj Palkiewicz</a>
+          <Link href="https://github.com/xnerhu/">Mikołaj Palkiewicz</Link>
         </Copyright>
       </Root>
     );

@@ -4,7 +4,7 @@ import { Marker } from 'react-google-maps';
 import Section from '@client/components/Section';
 import Textfield from '@client/components/Textfield';
 import Button from '@client/components/Button';
-import GoogleMap from '@client/components/GoogleMap';
+import Map from '@client/components/Map';
 import { Root, Form, Info, InfoContainer, Label, Value } from './styles';
 
 export default class Contact extends React.Component {
@@ -15,7 +15,7 @@ export default class Contact extends React.Component {
     };
 
     return (
-      <Section id="contact" title="Kontakt">
+      <Section id="contact" title="Kontakt" style={{ marginTop: 0 }}>
         <Root>
           <Form>
             <Textfield label="Nazwa firmy*" style={{ marginTop: 0 }} />
@@ -50,9 +50,9 @@ export default class Contact extends React.Component {
               <Label>TELEFON</Label>
               <Value>projekt.fit.life@onet.pl</Value>
             </InfoContainer>
-            <GoogleMap defaultCenter={schoolPos}>
+            <Map defaultCenter={schoolPos}>
               <Marker position={schoolPos} />
-            </GoogleMap>
+            </Map>
           </Info>
         </Root>
       </Section>

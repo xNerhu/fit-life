@@ -1,20 +1,21 @@
 import * as React from 'react';
 
-import { images } from '@client/constants';
-import { Title } from '@client/components/Section/styles';
-import { Root, Container, Logo } from './styles';
+import Section from '@client/components/Section';
+import { icons } from '@client/constants';
+import { Partner, Root } from './styles';
 
 export default class Partnership extends React.Component {
   render() {
     return (
-      <Root id="partnership">
-        <Title color="#000" dividerColor="#000" horizontal={false}>
-          Współpraca
-        </Title>
-        <Container>
-          <Logo src={images.bgzbnp} draggable={false} />
-        </Container>
-      </Root>
+      <Section
+        id="partnership"
+        title="Współpraca"
+        style={{ marginTop: 0, paddingTop: 64, backgroundColor: '#fafafa' }}
+      >
+        <Root>
+          <Partner src={icons.bgzbnp} draggable={false} />
+        </Root>
+      </Section>
     );
   }
 }

@@ -1,28 +1,21 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { PRIMARY_COLOR } from '@client/constants';
+import { CONTENT_WIDTH } from '@client/constants';
 
 export const Root = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: column;
-  padding: 32px 0px;
-  background-color: ${PRIMARY_COLOR};
-`;
-
-export const Container = styled.div`
-  margin-top: 24px;
-  display: flex;
   justify-content: center;
+  position: relative;
+
+  @media (max-width: ${CONTENT_WIDTH}px) {
+    justify-content: center;
+    padding-right: 0px;
+  }
 `;
 
-export const Logo = styled.img`
-  min-width: 96px;
-  height: 96px;
-  cursor: pointer;
+export const Partner = styled.img`
+  height: 148px;
   user-select: none;
-
-  ${({ filter }: { filter?: boolean }) => css`
-    filter: ${filter ? 'brightness(0) invert(0)' : 'unset'};
-  `};
+  cursor: pointer;
 `;

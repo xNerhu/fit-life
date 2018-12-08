@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 import { robotoMedium } from '@client/mixins';
-import { transparency } from '@client/constants';
 
 export const Root = styled.div`
   width: 100%;
@@ -50,15 +49,12 @@ export const Label = styled.div`
   transition-property: font-size, color, top;
   transition-duration: 0.15s;
   transition-timing-function: ease-out;
-
   ${robotoMedium()};
 
   ${({ activated, color }: { activated: boolean; color: string }) => css`
     font-size: ${activated ? 12 : 16}px;
     top: ${activated ? '10px' : '18px'};
-    color: ${activated
-      ? color
-      : `rgba(0, 0, 0, ${transparency.light.secondaryText})`};
+    color: ${activated ? color : 'rgba(0, 0, 0, 0.79)'};
   `};
 `;
 
@@ -85,7 +81,6 @@ const inputStyle = css`
   font-size: 16px;
   cursor: pointer;
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.89);
-
   ${robotoMedium()};
 
   ${({ color }: { color: string }) => css`
@@ -103,7 +98,6 @@ export const Input = styled.input`
 
 export const Textarea = styled.textarea`
   ${inputStyle};
-
   min-height: 128px;
   resize: vertical;
   margin-top: 32px;

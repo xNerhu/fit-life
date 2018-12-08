@@ -20,7 +20,7 @@ export const coverImage = () => `
     background-repeat: no-repeat;
   `;
 
-export const backImage = (url: string) => `
+export const backImage = (url: string, position = 'center') => `
   content: '';
   display: block;
   width: 100%;
@@ -29,7 +29,7 @@ export const backImage = (url: string) => `
   top: 0;
   left: 0;
   z-index: -1;
-  background-position: center;
+  background-position: ${position};
   background-attachment: fixed;
   background-image: url(${url});
 

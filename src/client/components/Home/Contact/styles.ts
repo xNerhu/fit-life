@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { transparency, MAX_SECTION_WIDTH } from '@client/constants';
+import { CONTENT_WIDTH } from '@client/constants';
 import { robotoMedium, shadows } from '@client/mixins';
 
 export const Root = styled.div`
@@ -8,7 +8,7 @@ export const Root = styled.div`
   user-select: text;
   flex-direction: row;
 
-  @media (max-width: ${MAX_SECTION_WIDTH}px) {
+  @media (max-width: ${CONTENT_WIDTH}px) {
     flex-direction: column;
   }
 `;
@@ -29,7 +29,7 @@ export const Form = styled.form`
     margin-top: 32px;
   }
 
-  @media (max-width: ${MAX_SECTION_WIDTH}px) {
+  @media (max-width: ${CONTENT_WIDTH}px) {
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -44,7 +44,7 @@ export const Info = styled.div`
   box-sizing: content-box;
   box-shadow: ${shadows(3)};
 
-  @media (max-width: ${MAX_SECTION_WIDTH}px) {
+  @media (max-width: ${CONTENT_WIDTH}px) {
     width: 100%;
     height: 512px;
     margin: 32px auto;
@@ -62,7 +62,7 @@ export const Label = styled.div`
   margin-right: 16px;
   margin-top: 4px;
   user-select: none;
-  color: rgba(0, 0, 0, ${transparency.light.primaryText});
+  color: rgba(0, 0, 0, 0.89);
 
   &:first-child {
     margin-top: 0px;
@@ -74,7 +74,6 @@ export const Value = styled.div`
   display: inline-block;
   text-align: right;
   font-size: 17px;
-  color: rgba(0, 0, 0, ${transparency.light.primaryText});
-
+  color: rgba(0, 0, 0, 0.89);
   ${robotoMedium()};
 `;

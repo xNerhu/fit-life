@@ -9,7 +9,7 @@ export interface State {
 
 export default class NavigationBar extends React.Component<{}, State> {
   public state: State = {
-    activated: true,
+    activated: false,
   };
 
   render() {

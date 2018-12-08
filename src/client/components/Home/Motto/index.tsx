@@ -1,15 +1,18 @@
-import * as React from 'react';
-
 import Button from '@client/components/Button';
 import { PRIMARY_COLOR } from '@client/constants';
-import { Triangle } from '../styles';
-import { Root, Text, Logo } from './styles';
+import { Triangle } from '@client/styles';
+import * as React from 'react';
+import { Root, Text } from './styles';
 
 export default class Motto extends React.Component {
   render() {
     return (
-      <Root id="motto">
-        <Triangle color={PRIMARY_COLOR} />
+      <Root>
+        <Triangle
+          color="#fff"
+          variant="top-left"
+          style={{ position: 'absolute', top: 0, left: 0 }}
+        />
         <Text>
           ZAWSZE DĄŻYMY DO CELU
           <br />
@@ -24,13 +27,17 @@ export default class Motto extends React.Component {
           <br />
           PROJEKTU FIT LIFE
         </Text>
-        <Logo />
         <Button
           variant="contained"
           background={PRIMARY_COLOR}
           foreground="#000"
           text="WEŹ UDZIAŁ"
-          style={{ marginTop: 24 }}
+          style={{ marginTop: 96 }}
+        />
+        <Triangle
+          color="#fff"
+          variant="bottom-right"
+          style={{ position: 'absolute', bottom: 0, right: 0 }}
         />
       </Root>
     );

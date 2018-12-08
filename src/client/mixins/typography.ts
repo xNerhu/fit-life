@@ -1,11 +1,6 @@
 export const getLetterSpacing = (fontSize: number, tracking: number) =>
   tracking / fontSize;
 
-export const robotoLight = () => `
-  font-family: Roboto;
-  font-weight: 300;
-`;
-
 export const robotoRegular = () => `
   font-family: Roboto;
   font-weight: 400;
@@ -24,18 +19,6 @@ font-weight: 400;
 export const gidoleRegular = () => `
 font-family: Gidole;
 font-weight: 400;
-`;
-
-export const h1 = () => `
-  ${robotoLight()};
-  letter-spacing: ${getLetterSpacing(96, -1.5)}rem;
-  font-size: 96px;
-`;
-
-export const h2 = () => `
-  ${robotoLight()};
-  letter-spacing: ${getLetterSpacing(60, -0.5)}rem;
-  font-size: 60px;
 `;
 
 export const h3 = () => `

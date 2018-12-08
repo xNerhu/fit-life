@@ -1,83 +1,52 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-import { transparency, MAX_SECTION_WIDTH } from '@client/constants';
-import { robotoMedium, robotoRegular } from '@client/mixins';
+import { CONTENT_WIDTH, PRIMARY_COLOR } from '@client/constants';
+import { robotoMedium, centerHorizontal, robotoRegular } from '@client/mixins';
 
 export const Root = styled.section`
-  width: 100%;
-  max-width: ${MAX_SECTION_WIDTH}px;
-  margin: 0 auto;
-  margin-top: 64px;
-  display: flex;
-
-  ${({ horizontal }: { horizontal: boolean }) => css`
-    flex-direction: ${horizontal ? 'row' : 'column'};
-  `};
-
-  @media (max-width: ${MAX_SECTION_WIDTH}px) {
-    flex-direction: column;
-  }
+  width: 100vw;
+  margin-top: 32px;
+  padding: 24px 0px;
 `;
-
-export interface TitleProps {
-  horizontal: boolean;
-  color: string;
-  dividerColor: string;
-}
 
 export const Title = styled.div`
   height: fit-content;
   position: relative;
-  padding-bottom: 24px;
+  text-align: center;
+  padding-bottom: 16px;
   font-size: 34px;
-
+  color: rgba(0, 0, 0, 0.89);
   ${robotoMedium()};
 
-  ${({ horizontal, color, dividerColor }: TitleProps) => css`
-    color: ${color};
-    margin-left: ${horizontal ? '24px' : 'auto'};
-    margin-right: ${horizontal ? ' unset' : 'auto'};
-
-    &::before {
-      content: '';
-      display: block;
-      width: 96px;
-      height: 2px;
-      bottom: 0px;
-      position: absolute;
-      background-color: ${dividerColor};
-      left: ${horizontal ? '0px' : '50%'};
-      transform: ${horizontal ? 'unset' : 'translateX(-50%)'};
-    }
-  `};
-
-  @media (max-width: ${MAX_SECTION_WIDTH}px) {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-
-    &::before {
-      left: 50%;
-      transform: translateX(-50%);
-    }
+  &::before {
+    content: '';
+    display: block;
+    width: 96px;
+    height: 2px;
+    bottom: 0px;
+    position: absolute;
+    background-color: ${PRIMARY_COLOR};
+    ${centerHorizontal()};
   }
 `;
 
-export const Content = styled.div`
+export const Container = styled.div`
   width: 100%;
-  margin-left: auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: ${CONTENT_WIDTH}px;
+  margin: 24px auto 0 auto;
   font-size: 17px;
-  color: rgba(0, 0, 0, ${transparency.light.primaryText});
+  color: rgba(0, 0, 0, 0.89);
+  ${robotoRegular()};
 
-  ${({ horizontal }: { horizontal: boolean }) => css`
-    width: ${horizontal ? '75%' : '100%'};
-    padding-top: ${horizontal ? '0px' : '32px'};
-  `};
-
-  @media (max-width: ${MAX_SECTION_WIDTH}px) {
-    width: 100%;
-    padding-top: 32px;
+  @media (max-width: ${CONTENT_WIDTH}px) {
+    padding: 0px 32px;
   }
+`;
+
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  max-width: ${CONTENT_WIDTH}px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.12);
 `;

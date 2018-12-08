@@ -1,24 +1,19 @@
 import styled from 'styled-components';
 
-import {
-  PRIMARY_COLOR,
-  images,
-  MAX_SECTION_WIDTH,
-  icons,
-} from '@client/constants';
-import { centerImage, robotoMedium } from '@client/mixins';
+import { PRIMARY_COLOR, icons } from '@client/constants';
+import { centerImage } from '@client/mixins';
 
 export const Root = styled.footer`
-  margin-top: 64px;
+  margin-top: 32px;
 `;
 
 export const SocialLinks = styled.div`
   width: 100vw;
   height: 96px;
-  background-color: ${PRIMARY_COLOR};
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${PRIMARY_COLOR};
 `;
 
 export const Icon = styled.a`
@@ -27,7 +22,6 @@ export const Icon = styled.a`
   will-change: transform;
   transition: 0.15s ease-out transform;
   -webkit-backface-visibility: hidden;
-
   ${centerImage('32px', 'auto')};
 
   &:hover {
@@ -58,12 +52,12 @@ export const Copyright = styled.div`
   background-color: #424242;
   color: #fff;
   font-size: 15px;
+`;
 
-  a {
-    color: #fff;
+export const Link = styled.a`
+  color: #fff;
 
-    &:hover {
-      text-decoration: underline;
-    }
+  &:hover {
+    text-decoration: underline;
   }
 `;

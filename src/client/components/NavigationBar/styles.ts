@@ -5,12 +5,13 @@ import {
   centerImage,
   edoRegular,
   centerVertical,
+  robotoMedium,
 } from '@client/mixins';
 import { images } from '@client/constants';
 
 export const Root = styled.nav`
   width: 100vw;
-  height: 56px;
+  height: 64px;
   position: fixed;
   top: 0;
   left: 0;

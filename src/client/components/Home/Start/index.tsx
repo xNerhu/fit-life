@@ -1,24 +1,30 @@
 import * as React from 'react';
 
-import { PRIMARY_COLOR } from '@client/constants';
 import Button from '@client/components/Button';
-import { Root, Container, Logo, Title, Subtitle } from './styles';
+import { PRIMARY_COLOR } from '@client/constants';
+import { Triangle } from '@client/styles';
+import { Root, Content, Title, Subtitle } from './styles';
 
 export default class Start extends React.Component {
   render() {
     return (
       <Root id="start">
-        <Container>
-          <Logo />
-          <Title>Projekt Fit Life</Title>
+        <Content>
+          <Title>PROJEKT FIT LIFE</Title>
           <Subtitle>Zmień swoje życie na lepsze</Subtitle>
           <Button
-            variant="contained"
-            background={PRIMARY_COLOR}
-            foreground="#000"
+            variant="outlined"
+            foreground={PRIMARY_COLOR}
+            borderColor={PRIMARY_COLOR}
             text="WEŹ UDZIAŁ"
+            style={{ marginTop: 36 }}
           />
-        </Container>
+        </Content>
+        <Triangle
+          color="#fff"
+          variant="bottom-right"
+          style={{ position: 'absolute', bottom: 0, right: 0 }}
+        />
       </Root>
     );
   }
