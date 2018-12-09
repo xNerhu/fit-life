@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import { coverImage, backImage } from '@client/mixins';
 import { images } from '@client/constants';
+import { backImage, coverImage } from '@client/mixins';
 
-export const Root = styled.div`
+export default styled.div`
   width: 100%;
   height: 288px;
   position: relative;

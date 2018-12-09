@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { PRIMARY_COLOR } from '@client/constants';
 import Section from '@client/components/Section';
-import { Divider } from '@client/components/Section/styles';
+import { Divider, Bold } from '@client/components/Section/styles';
 
 export default class Problem extends React.Component {
   render() {
@@ -20,7 +20,7 @@ export default class Problem extends React.Component {
           naprzeciw. Staramy się pokazać, że nawet jeżeli nie mają oni zbyt
           wiele czasu dla siebie to i tak mogą zawalczyć o swoją sylwetkę oraz
           psychikę. Pierwszym krokiem do zmiany może być dołączenie do{' '}
-          <span style={{ color: PRIMARY_COLOR }}>Projektu Fit Life.</span>
+          <Bold style={{ color: PRIMARY_COLOR }}>Projektu Fit Life.</Bold>
         </Section>
       </React.Fragment>
     );

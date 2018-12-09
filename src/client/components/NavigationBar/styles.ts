@@ -16,6 +16,8 @@ export const Root = styled.nav`
   z-index: 100;
   padding: 8px 0px;
   overflow: hidden;
+  will-change: background-color;
+  transition: 0.15s background-color;
 
   ${({ activated, toggled }: Props) => css`
     max-height: ${toggled ? '100%' : '64px'};

@@ -5,24 +5,21 @@ import { images, CONTENT_WIDTH } from '@client/constants';
 
 export const Root = styled.section`
   width: 100%;
-  height: calc(100vh - 128px);
+  height: 100vh;
   min-height: 600px;
   position: relative;
   overflow: hidden;
   display: flex;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.12);
   color: #fff;
 
   &::before {
     filter: brightness(50%);
-    transform: scale(1.3);
-    ${backImage(images.header, 'center left')};
+    ${backImage(images.header)};
   }
 
   @media (max-width: ${CONTENT_WIDTH}px) {
     &::before {
-      transform: scale(1.1);
       background-position: center;
     }
   }

@@ -50,10 +50,6 @@ export const ItemContent = styled.div`
   color: rgba(0, 0, 0, 0.79);
 `;
 
-export const Bold = styled.span`
-  ${robotoMedium()};
-`;
-
 export const Link = styled.a`
   color: ${PRIMARY_COLOR};
   text-decoration: underline;

@@ -15,7 +15,7 @@ export default class Contact extends React.Component {
     };
 
     return (
-      <Section id="contact" title="Kontakt" style={{ marginTop: 0 }}>
+      <Section id="contact" title="Kontakt">
         <Root>
           <Form>
             <Textfield label="Nazwa firmy*" style={{ marginTop: 0 }} />

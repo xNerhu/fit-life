@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Section from '@client/components/Section';
 import {
-  Bold,
   Link,
   Items,
   ItemRoot,
@@ -11,6 +10,7 @@ import {
   ItemContent,
 } from './styles';
 import { icons } from '@client/constants';
+import { Bold } from '@client/components/Section/styles';
 
 export interface ItemProps {
   title: string;
@@ -34,11 +34,7 @@ export class Item extends React.Component<ItemProps, {}> {
 export default class About extends React.Component {
   render() {
     return (
-      <Section
-        id="about"
-        title="O projekcie"
-        style={{ marginTop: 0, marginBottom: 32 }}
-      >
+      <Section id="about" title="O projekcie">
         <Bold>Projekt Fit Life</Bold> to inicjatywa zachęcająca do&nbsp;
         <Bold>prowadzenia zdrowego trybu życia</Bold>, a tym samym walkę z
         szerzącym się problemem społecznym. Jednak nasz projekt nie ogranicza

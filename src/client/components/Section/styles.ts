@@ -5,8 +5,7 @@ import { robotoMedium, centerHorizontal, robotoRegular } from '@client/mixins';
 
 export const Root = styled.section`
   width: 100vw;
-  margin-top: 32px;
-  padding: 24px 0px;
+  padding: 48px 0px;
 `;
 
 export const Title = styled.div`
@@ -49,4 +48,8 @@ export const Divider = styled.div`
   max-width: ${CONTENT_WIDTH}px;
   margin: 0 auto;
   background-color: rgba(0, 0, 0, 0.12);
+`;
+
+export const Bold = styled.span`
+  ${robotoMedium()};
 `;

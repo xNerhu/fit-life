@@ -10,7 +10,7 @@ export default class Partnership extends React.Component {
       <Section
         id="partnership"
         title="Współpraca"
-        style={{ marginTop: 0, paddingTop: 64, backgroundColor: '#fafafa' }}
+        style={{ backgroundColor: '#fafafa' }}
       >
         <Root>
           <Partner src={icons.bgzbnp} draggable={false} />

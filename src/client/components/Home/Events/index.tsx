@@ -3,7 +3,6 @@ import * as React from 'react';
 import Section from '@client/components/Section';
 import { shortMonths } from '@client/constants';
 import { formatTime } from '@client/utils';
-import { Triangle } from '@client/styles';
 import {
   EventItemRoot,
   DateInfo,
@@ -50,22 +49,15 @@ export class EventItem extends React.Component<Props, {}> {
 export default class Events extends React.Component {
   render() {
     return (
-      <React.Fragment>
-        <Triangle color="#fafafa" variant="top-left" />
-        <Section
-          id="events"
-          title="Nadchodzące wydarzenia"
-          style={{ marginBottom: 24 }}
-        >
-          <EventItem
-            data={{
-              start: new Date(2018, 11, 17, 10, 30),
-              end: new Date(2018, 11, 17, 10, 30),
-              title: 'Inauguracja projektu',
-            }}
-          />
-        </Section>
-      </React.Fragment>
+      <Section id="events" title="Nadchodzące wydarzenia">
+        <EventItem
+          data={{
+            start: new Date(2018, 11, 17, 10, 30),
+            end: new Date(2018, 11, 17, 10, 30),
+            title: 'Inauguracja projektu',
+          }}
+        />
+      </Section>
     );
   }
 }

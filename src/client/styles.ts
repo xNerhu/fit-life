@@ -46,28 +46,3 @@ export const Style = css`
     color: #000;
   }
 `;
-
-export interface TriangleProps {
-  color: string;
-  variant: 'bottom-right' | 'top-left';
-}
-
-export const Triangle = styled.div`
-  width: 0;
-  height: 0;
-  border-style: solid;
-
-  ${({ color, variant }: TriangleProps) => {
-    if (variant === 'top-left') {
-      return css`
-        border-width: 64px 2000px 0 0;
-        border-color: ${color} transparent transparent transparent;
-      `;
-    }
-
-    return css`
-      border-width: 0 0 64px 2000px;
-      border-color: transparent transparent ${color} transparent;
-    `;
-  }};
-`;
