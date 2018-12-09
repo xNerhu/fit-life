@@ -1,45 +1,102 @@
 import styled, { css } from 'styled-components';
+import { Link as RouteLink } from 'react-router-dom';
 
-import {
-  shadows,
-  centerImage,
-  edoRegular,
-  centerVertical,
-  robotoMedium,
-} from '@client/mixins';
-import { images } from '@client/constants';
+import { shadows, centerImage, edoRegular, centerBoth } from '@client/mixins';
+import { CONTENT_WIDTH, icons } from '@client/constants';
+
+export interface Props {
+  activated: boolean;
+  toggled: boolean;
+}
 
 export const Root = styled.nav`
-  width: 100vw;
-  height: 64px;
+  width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
+  z-index: 100;
+  padding: 8px 0px;
+  overflow: hidden;
 
-  ${({ activated }: { activated: boolean }) => css`
-    background-color: ${activated ? '#fff' : 'unset'};
-    box-shadow: ${activated ? shadows(2) : 'unset'};
+  ${({ activated, toggled }: Props) => css`
+    max-height: ${toggled ? '100%' : '64px'};
+    background-color: ${activated || toggled ? '#fff' : 'unset'};
+    box-shadow: ${activated || toggled ? shadows(2) : 'unset'};
+
+    a {
+      color: ${activated || toggled ? '#000' : '#fff'};
+    }
+
+    a:hover {
+      background-color: ${activated || toggled
+        ? 'rgba(0, 0, 0, 0.04)'
+        : 'rgba(255, 255, 255, 0.24)'};
+    }
   `};
+
+  @media (min-width: ${CONTENT_WIDTH + 1}px) {
+    display: flex;
+    align-items: center;
+  }
 `;
 
-export const Brand = styled.div`
+export const ItemsContainer = styled.div`
+  margin-left: auto;
+
+  @media (max-width: ${CONTENT_WIDTH}px) {
+    width: 100%;
+    padding: 8px 0 0 0;
+  }
+`;
+
+export const MenuIcon = styled.div`
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  position: absolute;
+  display: none;
+  top: 0;
+  right: 8px;
+  background-image: url(${icons.menu});
+  ${centerImage('24px', 'auto')};
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background-color: #000;
+    border-radius: 100%;
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity;
+    transition: 0.2s opacity;
+    ${centerBoth()};
+  }
+
+  &:hover::before {
+    opacity: 0.12;
+  }
+
+  ${({ activated, toggled }: Props) => css`
+    filter: ${activated || toggled ? 'unset' : 'invert(100%)'};
+  `};
+
+  @media (max-width: ${CONTENT_WIDTH}px) {
+    display: block;
+  }
+`;
+
+export const LogoContainer = styled.div`
   margin-left: 16px;
   display: flex;
   align-items: center;
-
-  ${({ activated }: { activated: boolean }) => css`
-    opacity: ${activated ? 1 : 0};
-  `};
 `;
 
 export const Logo = styled.div`
   width: 48px;
   height: 48px;
-  background-image: url(${images.logo});
-
+  background-image: url(${icons.logo});
   ${centerImage('100%', 'auto')};
 `;
 
@@ -47,65 +104,27 @@ export const Title = styled.div`
   margin-left: 8px;
   font-size: 14px;
   color: #c3e63d;
-
   ${edoRegular()};
 `;
 
-export const Container = styled.div`
-  height: 100%;
-  margin-left: auto;
-  padding-right: 24px;
-  white-space: nowrap;
-  overflow-x: auto;
+export const Link = styled(RouteLink)`
+  width: auto;
+  padding: 12px 12px;
+  margin-right: 8px;
+  font-size: 17px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  will-change: background-color;
+  transition: 0.15s background-color;
 
-  a {
-    width: auto;
-    display: inline-flex;
-    padding: 12px 12px;
-    margin-right: 8px;
-    font-size: 17px;
-    border-radius: 4px;
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-    will-change: background-color;
-    transition: 0.15s background-color;
-
-    ${centerVertical()};
+  &:last-child {
+    margin-right: 24px;
   }
 
-  ${({ activated }: { activated: boolean }) => css`
-    a {
-      color: ${activated ? '#000' : '#fff'};
-    }
-
-    a:hover {
-      background-color: ${activated
-        ? 'rgba(0, 0, 0, 0.04)'
-        : 'rgba(255, 255, 255, 0.24)'};
-    }
-  `};
-
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-
-  &::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.38);
-    border: 0px none #ffffff;
-    border-radius: 0px;
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.54);
-  }
-
-  &::-webkit-scrollbar-corner {
-    background: transparent;
+  @media (max-width: ${CONTENT_WIDTH}px) {
+    width: 100%;
+    display: block;
+    padding-left: 24px;
   }
 `;

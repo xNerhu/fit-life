@@ -38,7 +38,7 @@ export const TeamMemberRoot = styled.a`
     margin-left: 0px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: ${CONTENT_WIDTH}px) {
     margin-left: 0px;
   }
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { backImage, edoRegular } from '@client/mixins';
 import { images, CONTENT_WIDTH } from '@client/constants';
 
-export const Root = styled.div`
+export const Root = styled.section`
   width: 100%;
   height: calc(100vh - 128px);
   min-height: 600px;

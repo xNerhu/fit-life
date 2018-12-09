@@ -10,7 +10,7 @@ export default class Start extends React.Component {
     return (
       <Root id="start">
         <Content>
-          <Title>PROJEKT FIT LIFE</Title>
+          <Title id="start-title">PROJEKT FIT LIFE</Title>
           <Subtitle>Zmień swoje życie na lepsze</Subtitle>
           <Button
             variant="outlined"

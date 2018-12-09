@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import { robotoMedium, centerImage } from '@client/mixins';
-import { CONTENT_WIDTH } from '@client/constants';
+import { CONTENT_WIDTH, PRIMARY_COLOR } from '@client/constants';
 
 export const Items = styled.div`
   width: 100%;
@@ -55,11 +55,11 @@ export const Bold = styled.span`
 `;
 
 export const Link = styled.a`
-  color: #ffc107;
+  color: ${PRIMARY_COLOR};
   text-decoration: underline;
   ${robotoMedium()};
 
   &:hover {
-    color: #ffa000;
+    color: #64dd17;
   }
 `;

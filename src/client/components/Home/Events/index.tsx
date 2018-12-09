@@ -52,7 +52,11 @@ export default class Events extends React.Component {
     return (
       <React.Fragment>
         <Triangle color="#fafafa" variant="top-left" />
-        <Section id="events" title="Nadchodzące wydarzenia">
+        <Section
+          id="events"
+          title="Nadchodzące wydarzenia"
+          style={{ marginBottom: 24 }}
+        >
           <EventItem
             data={{
               start: new Date(2018, 11, 17, 10, 30),

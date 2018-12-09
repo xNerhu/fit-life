@@ -34,7 +34,7 @@ export const Container = styled.div`
   width: 100%;
   max-width: ${CONTENT_WIDTH}px;
   margin: 24px auto 0 auto;
-  font-size: 17px;
+  font-size: 18px;
   color: rgba(0, 0, 0, 0.89);
   ${robotoRegular()};
 
