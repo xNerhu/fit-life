@@ -1,4 +1,4 @@
-<img src="https://github.com/xNerhu/fit-life/blob/master/src/client/resources/images/logo.png" width="128">
+<img src="https://raw.githubusercontent.com/xnerhu/fit-life/master/src/client/resources/icons/logo.png" width="128">
 
 # Projekt Fit Life
 
