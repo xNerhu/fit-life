@@ -15,12 +15,15 @@ import {
 } from './styles';
 
 export interface Props {
-  data: any;
+  link?: string;
+  start?: Date;
+  end?: Date;
+  title: string;
 }
 
 export class EventItem extends React.Component<Props, {}> {
   render() {
-    const { start, end, title, link } = this.props.data;
+    const { start, end, title, link } = this.props;
 
     // Don't render if an event is finished
     if (start.getTime() < new Date().getTime()) {
@@ -28,7 +31,7 @@ export class EventItem extends React.Component<Props, {}> {
     }
 
     return (
-      <EventItemRoot href={link}>
+      <EventItemRoot href={link} target="_blank">
         <DateInfo>
           <Month>{shortMonths[start.getMonth()]}</Month>
           <Day>{start.getDate()}</Day>
@@ -51,11 +54,10 @@ export default class Events extends React.Component {
     return (
       <Section id="events" title="Nadchodzące wydarzenia">
         <EventItem
-          data={{
-            start: new Date(2018, 11, 17, 10, 30),
-            end: new Date(2018, 11, 17, 10, 30),
-            title: 'Inauguracja projektu',
-          }}
+          title="Inauguracja projektu"
+          link="https://www.facebook.com/events/366025517492549/"
+          start={new Date(2018, 11, 17, 10, 30)}
+          end={new Date(2018, 11, 17, 10, 30)}
         />
       </Section>
     );
