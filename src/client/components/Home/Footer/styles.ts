@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { PRIMARY_COLOR, icons } from '@client/constants';
+import { PRIMARY_COLOR } from '@client/constants';
 import { centerImage } from '@client/mixins';
 
 export const Root = styled.footer`
@@ -24,6 +24,10 @@ export const Icon = styled.a`
   -webkit-backface-visibility: hidden;
   ${centerImage('32px', 'auto')};
 
+  ${({ src }: { src: string }) => css`
+    background-image: url(${src});
+  `};
+
   &:hover {
     transform: scale(1.5);
   }
@@ -31,18 +35,6 @@ export const Icon = styled.a`
   &:first-child {
     margin-left: 0px;
   }
-`;
-
-export const FacebookIcon = styled(Icon)`
-  background-image: url(${icons.facebook});
-`;
-
-export const InstagramIcon = styled(Icon)`
-  background-image: url(${icons.instagram});
-`;
-
-export const GithubIcon = styled(Icon)`
-  background-image: url(${icons.github});
 `;
 
 export const Copyright = styled.div`

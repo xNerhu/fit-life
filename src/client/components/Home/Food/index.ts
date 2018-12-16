@@ -5,7 +5,7 @@ import { backImage, coverImage } from '@client/mixins';
 
 export default styled.div`
   width: 100%;
-  height: 288px;
+  height: 256px;
   position: relative;
 
   &::before {

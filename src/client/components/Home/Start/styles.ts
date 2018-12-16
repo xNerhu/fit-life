@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { backImage, edoRegular } from '@client/mixins';
+import { backImage, edoRegular, gidoleRegular } from '@client/mixins';
 import { images, CONTENT_WIDTH } from '@client/constants';
 
 export const Root = styled.section`
@@ -44,6 +44,7 @@ export const Title = styled.div`
 export const Subtitle = styled.div`
   margin-top: 16px;
   font-size: 24px;
+  ${gidoleRegular()};
 `;
 
 export const Triangle = styled.div`

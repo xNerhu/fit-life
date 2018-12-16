@@ -7,6 +7,7 @@ export const Root = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
+  align-items: center;
 
   @media (max-width: ${CONTENT_WIDTH}px) {
     justify-content: center;
@@ -15,7 +16,12 @@ export const Root = styled.div`
 `;
 
 export const Partner = styled.img`
-  height: 148px;
+  height: 196px;
   user-select: none;
+  margin-left: 48px;
   cursor: pointer;
+
+  &:first-child {
+    margin-left: 0px;
+  }
 `;
