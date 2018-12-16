@@ -34,6 +34,7 @@ export const Style = css`
     padding: 0;
     background-color: #fff;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
     ${body2()};
   }
 

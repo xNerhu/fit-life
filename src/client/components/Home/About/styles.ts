@@ -7,18 +7,17 @@ export const Items = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
 
   @media (max-width: ${CONTENT_WIDTH}px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
 export const ItemRoot = styled.div`
   max-width: 288px;
-  height: auto;
   margin-top: 32px;
-  margin-left: 48px;
+  margin-left: 164px;
 
   &:first-child {
     margin-left: 0px;
@@ -41,12 +40,13 @@ export const ItemIcon = styled.svg`
 
 export const ItemTitle = styled.div`
   margin-top: 8px;
-  font-size: 24px;
+  font-size: 20px;
   ${robotoMedium()};
 `;
 
 export const ItemContent = styled.div`
   margin-top: 8px;
+  font-size: 16px;
   color: rgba(0, 0, 0, 0.79);
 `;
 
