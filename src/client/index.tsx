@@ -1,23 +1,9 @@
 import * as React from 'react';
-import { render as RenderDOM } from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
-import { injectGlobal } from 'styled-components';
+import { hydrate } from 'react-dom';
 
-import { Style } from './styles';
-import App from './components/App';
+import App from '@shared/components/App';
 
-injectGlobal`${Style}`;
-
-const render = (AppComponent: any) => {
-  RenderDOM(
-    <AppContainer>
-      <AppComponent />
-    </AppContainer>,
-    document.getElementById('app'),
-  );
-};
-
-render(App);
+hydrate(<App />, document.getElementById('app'));
 
 // react-hot-loader
 if ((module as any).hot) {
