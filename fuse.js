@@ -1,6 +1,6 @@
 const { join } = require('path');
-const { writeFile, readFile } = require('fs').promises;
-const { spawn } = require('child_process');
+const dotenv = require('dotenv');
+const { TypeChecker } = require('fuse-box-typechecker');
 const {
   FuseBox,
   EnvPlugin,
@@ -9,10 +9,22 @@ const {
   JSONPlugin,
   CopyPlugin,
 } = require('fuse-box');
-const dotenv = require('dotenv');
 
 const isProduction = process.env.NODE_ENV === 'prod';
 const outputDir = 'build';
+
+const testWatch = TypeChecker({
+  tsConfig: './tsconfig.json',
+  tsLint: './tslint.json',
+  basePath: './',
+  yellowOnLint: true,
+  shortenFilenames: true,
+  skipTsErrors: [2307],
+});
+
+if (!isProduction) {
+  testWatch.runWatch('./src/');
+}
 
 dotenv.config();
 
@@ -42,7 +54,6 @@ class Builder {
       tsConfig: './tsconfig.json',
       useTypescriptCompiler: true,
       sourceMaps: target !== 'server',
-      hash: isProduction,
       cache: !isProduction,
       plugins: [
         JSONPlugin(),
@@ -60,7 +71,6 @@ class Builder {
             bakeApiIntoBundle: name,
             treeshake: true,
             removeExportsInterop: false,
-            target: target,
             uglify: {
               es6: true,
             },
@@ -99,16 +109,9 @@ class Builder {
       }
     }
 
-    const producer = await fuse.run();
-    const bundle = producer.bundles.get(name);
-    return bundle.context.output.lastGeneratedFileName;
+    return await fuse.run();
   }
 }
-
-let bundles = {
-  client: '',
-  server: '',
-};
 
 Sparky.task('clean', async () => {
   await Sparky.src(outputDir)
@@ -119,38 +122,20 @@ Sparky.task('clean', async () => {
 Sparky.task('default', ['clean', 'client', 'server']);
 
 Sparky.task('server', async () => {
-  const builder = new Builder({
+  await new Builder({
     name: 'server',
     target: 'server',
     instructions: '> [server/index.ts] +shared/**',
     runWhenCompleted: true,
     watchFilter: path => !path.match('.*.client'),
-  });
-
-  const bundleFileName = await builder.init();
-  bundles.server = bundleFileName;
-
-  await writeFile(join(outputDir, 'bundles.json'), JSON.stringify(bundles));
+  }).init();
 });
 
 Sparky.task('client', async () => {
-  const builder = new Builder({
+  await new Builder({
     name: 'client',
     instructions: '> client/index.tsx +shared/**',
     watchFilter: path => !path.match('.*.server'),
     output: join('public', '$name.js'),
-  });
-
-  const bundleFileName = await builder.init();
-  bundles.client = bundleFileName;
-});
-
-Sparky.task('start', async () => {
-  const bundles = await readFile(join(outputDir, 'bundles.json'));
-  const json = JSON.parse(bundles);
-
-  spawn('node', [join(outputDir, json.server)], {
-    shell: true,
-    stdio: 'inherit',
-  });
+  }).init();
 });

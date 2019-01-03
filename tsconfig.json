@@ -16,6 +16,8 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "esnext"],
     "experimentalDecorators": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
 
     "baseUrl": "./",
 
@@ -25,5 +27,6 @@
       "@shared/*": ["src/shared/*"],
       "~/*": ["src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

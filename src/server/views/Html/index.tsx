@@ -1,16 +1,14 @@
 import * as React from 'react';
 
-import { IBundles } from '@shared/interfaces';
-
 export interface Props {
   appString: string;
-  bundles: IBundles;
+  clientBundle: string;
   styleElement: React.ReactElement<{}>[];
 }
 
 export default class Html extends React.Component<Props, {}> {
   public render() {
-    const { appString, bundles, styleElement } = this.props;
+    const { appString, clientBundle, styleElement } = this.props;
 
     return (
       <html>
@@ -34,7 +32,7 @@ export default class Html extends React.Component<Props, {}> {
         </head>
         <body>
           <main id="app" dangerouslySetInnerHTML={{ __html: appString }} />
-          {bundles && <script src={bundles.client} />}
+          {clientBundle && <script src={clientBundle} />}
         </body>
       </html>
     );
