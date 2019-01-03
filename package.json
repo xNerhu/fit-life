@@ -1,10 +1,6 @@
 {
-  "name": "fit-life",
-<<<<<<< HEAD
+  "name": "projekt-fit-life",
   "version": "2.0.0",
-=======
-  "version": "1.0.0",
->>>>>>> 52e6d49efa8ff7e40043b26853fd93d02c9c8554
   "description": "Strona projektu \"Fit Life\" w ramach konkursu zwolnienizteorii.pl",
   "keywords": [
     "node",
@@ -19,9 +15,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xnerhu/fit-life.git"
+    "url": "git+https://github.com/xnerhu/projekt-fit-life.git"
   },
-  "homepage": "https://github.com/xnerhu/fit-life#readme",
+  "homepage": "https://github.com/xnerhu/projekt-fit-life#readme",
   "main": "./server.js",
   "scripts": {
     "dev": "cross-env NODE_ENV='dev' node fuse",
