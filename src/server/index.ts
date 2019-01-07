@@ -6,14 +6,16 @@ import * as dotenv from 'dotenv';
 
 import controllers from './controllers';
 
-const app = express();
-
 dotenv.config();
+
+const app = express();
+const PORT = process.env.EXPRESS_PORT;
+
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(controllers);
 
-createServer(app).listen(8080, async () => {
-  console.log('Listening on port 8080!');
+createServer(app).listen(PORT, () => {
+  console.log(`Listening on port ${PORT}!`);
 });
