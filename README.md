@@ -36,7 +36,7 @@ lub używająć [`Yarn`](https://yarnpkg.com/)
 $ yarn
 ```
 
-4. Włącz tryb deweloperski
+4. Obserwuj zmiany kodu źródłowego 
 
 ```bash
 $ yarn dev
