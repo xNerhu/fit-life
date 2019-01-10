@@ -47,6 +47,8 @@ class Builder {
   }
 
   static getFuseConfig(target, name, output = '$name.js') {
+    const { GOOGLE_MAPS_API_KEY, GOOGLE_ANALYTICS_ID } = process.env;
+
     return {
       target,
       homeDir: 'src/',
@@ -64,7 +66,8 @@ class Builder {
         }),
         EnvPlugin({
           NODE_ENV: isProduction ? 'production' : 'development',
-          GOOGLE_MAPS_API_KEY: process.env.GOOGLE_MAPS_API_KEY,
+          GOOGLE_MAPS_API_KEY,
+          GOOGLE_ANALYTICS_ID,
         }),
         isProduction &&
           QuantumPlugin({
