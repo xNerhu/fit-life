@@ -1,6 +1,6 @@
 {
   "name": "projekt-fit-life",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Strona projektu \"Fit Life\" w ramach konkursu zwolnienizteorii.pl",
   "keywords": [
     "node",
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/xnerhu/projekt-fit-life.git"
   },
   "homepage": "https://github.com/xnerhu/projekt-fit-life#readme",
-  "main": "./server.js",
+  "main": "./build/server.js",
   "scripts": {
     "dev": "cross-env NODE_ENV='dev' node fuse",
     "build": "cross-env NODE_ENV='prod' node fuse",
